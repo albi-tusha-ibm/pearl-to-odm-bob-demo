@@ -1,5 +1,5 @@
 # =============================================================================
-# PEARL Rule File: docs_required.pearl
+# PEARL Rule File: docs_required.perl
 # Description:    Documentation requirement rules for MI underwriting
 # Author:         Compliance / Operations
 # Created:        2020-11
@@ -10,7 +10,7 @@
 # Multiple rules can fire for a single loan — all applicable docs are collected.
 #
 # NOTE: These rules run for approve and refer outcomes only.
-#       Decline cases do not require doc collection — see ruleflow.pearl.
+#       Decline cases do not require doc collection — see ruleflow.perl.
 #
 # Doc codes reference:
 #   FTHB_CERT            — First-time homebuyer education certificate

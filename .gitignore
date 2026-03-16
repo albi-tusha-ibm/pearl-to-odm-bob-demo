@@ -85,6 +85,12 @@ nosetests.xml
 test-results/
 test-output/
 
+# ODM Results (generated during testing)
+odm_results/
+
+# Parity validation outputs
+tools/parity_summary.txt
+
 # Jupyter Notebook
 .ipynb_checkpoints
 

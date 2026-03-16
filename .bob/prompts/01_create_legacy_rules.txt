@@ -26,12 +26,12 @@ REQUIREMENTS:
   * Some rules with overlapping conditions
 
 OUTPUT STRUCTURE:
-- 5 .pearl files:
-  1. underwriting.pearl (eligibility rules)
-  2. pricing.pearl (rate adjustment rules)
-  3. docs_required.pearl (documentation rules)
-  4. exceptions.pearl (manual review triggers)
-  5. ruleflow.pearl (execution order)
+- 5 .perl files:
+  1. underwriting.perl (eligibility rules)
+  2. pricing.perl (rate adjustment rules)
+  3. docs_required.perl (documentation rules)
+  4. exceptions.perl (manual review triggers)
+  5. ruleflow.perl (execution order)
 
 - 2 CSV lookup tables:
   1. pricing_matrix.csv (base rates by LTV/FICO bands)

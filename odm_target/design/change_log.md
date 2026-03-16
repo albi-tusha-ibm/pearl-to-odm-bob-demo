@@ -2,14 +2,14 @@
 
 ## Overview
 
-This document provides a business-readable summary of all changes made during the migration from legacy PEARL-DSL to IBM ODM. Changes are categorized by type and include business justification, technical details, and impact assessment.
+This document provides a business-readable summary of all changes made during the migration from legacy PERL-DSL to IBM ODM. Changes are categorized by type and include business justification, technical details, and impact assessment.
 
 ---
 
 ## Version 1.0.0 - Initial ODM Migration
 
 **Release Date**: 2026-03-02  
-**Migration Scope**: Complete replacement of PEARL-DSL rule engine with IBM ODM  
+**Migration Scope**: Complete replacement of PERL-DSL rule engine with IBM ODM  
 **Approval Status**: ✅ Approved by QA & Validation Team; ⏳ Pending Risk & Compliance final sign-off
 
 ---
@@ -170,7 +170,7 @@ This document provides a business-readable summary of all changes made during th
 **Issue**:
 - Legacy rule PRICE-001 (preferred pricing) should have matched
 - Condition: LTV ≤ 80% AND FICO ≥ 740 AND occupancy = PRIMARY
-- All conditions met, but rule didn't fire (likely PEARL-DSL engine bug)
+- All conditions met, but rule didn't fire (likely PERL-DSL engine bug)
 - Fallback pricing overly conservative for this low-risk profile
 
 **ODM Solution**:
@@ -356,7 +356,7 @@ This document provides a business-readable summary of all changes made during th
 In the unlikely event that ODM deployment needs to be rolled back:
 
 ### Immediate Rollback (< 24 hours)
-1. Reactivate legacy PEARL-DSL engine
+1. Reactivate legacy PERL-DSL engine
 2. Route all traffic back to legacy system
 3. ODM remains available for parallel testing
 
@@ -464,7 +464,7 @@ In the unlikely event that ODM deployment needs to be rolled back:
 5. ⏳ Conduct UAT testing (PENDING)
 6. ⏳ Deploy to production (PENDING)
 7. ⏳ Monitor for 30 days (PENDING)
-8. ⏳ Decommission legacy PEARL-DSL (PENDING)
+8. ⏳ Decommission legacy PERL-DSL (PENDING)
 
 ---
 

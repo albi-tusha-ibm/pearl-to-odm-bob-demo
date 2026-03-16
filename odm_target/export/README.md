@@ -185,7 +185,7 @@ Java classes that implement the BOM:
 
 7. **Test in Decision Service Console**
    - Right-click `MI_Underwriting` → `Run As → Decision Service`
-   - Use sample JSON from `legacy_pearl/samples/` as test input
+   - Use sample JSON from `legacy_perl/samples/` as test input
    - Compare results with `expected_decisions.csv`
 
 ### Common Import Issues
@@ -279,14 +279,14 @@ deploy_to_res:
 
 Use the 60 loan application JSON files from:
 ```
-pearl-to-odm-bob-demo/legacy_pearl/samples/loan_app_001.json
+perl-to-odm-bob-demo/legacy_perl/samples/loan_app_001.json
 ...
-pearl-to-odm-bob-demo/legacy_pearl/samples/loan_app_060.json
+perl-to-odm-bob-demo/legacy_perl/samples/loan_app_060.json
 ```
 
 Expected results are documented in:
 ```
-pearl-to-odm-bob-demo/legacy_pearl/samples/expected_decisions.csv
+perl-to-odm-bob-demo/legacy_perl/samples/expected_decisions.csv
 ```
 
 ### Testing Methods
@@ -376,8 +376,8 @@ print(json.dumps(response.json(), indent=2))
 
 Use the provided stub script as a template:
 ```bash
-cd pearl-to-odm-bob-demo/tools
-python invoke_odm_stub.py --batch ../legacy_pearl/samples/
+cd perl-to-odm-bob-demo/tools
+python invoke_odm_stub.py --batch ../legacy_perl/samples/
 ```
 
 **Script Features:**
@@ -806,7 +806,7 @@ GROUP BY ruleset_name;
 
 Follow the governance process documented in:
 ```
-pearl-to-odm-bob-demo/odm_target/design/governance_and_release.md
+perl-to-odm-bob-demo/odm_target/design/governance_and_release.md
 ```
 
 **Key Governance Activities:**
@@ -865,7 +865,7 @@ pearl-to-odm-bob-demo/odm_target/design/governance_and_release.md
 ### Related Documentation in This Repository
 - `design/decision_service_arch.md` - Architecture overview
 - `design/domain_model.md` - Business object model details
-- `design/mappings_pearl_to_odm.md` - Pearl to ODM rule mappings
+- `design/mappings_perl_to_odm.md` - Pearl to ODM rule mappings
 - `design/parity_report.md` - Validation of Pearl-to-ODM parity
 - `design/change_log.md` - History of rule changes
 - `design/governance_and_release.md` - Governance framework

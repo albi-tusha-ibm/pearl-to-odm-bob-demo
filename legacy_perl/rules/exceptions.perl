@@ -1,5 +1,5 @@
 # =============================================================================
-# PEARL Rule File: exceptions.pearl
+# PEARL Rule File: exceptions.perl
 # Description:    Exception and override rules — highest priority in the flow
 # Author:         Risk Policy / Senior Underwriting
 # Created:        2021-01
@@ -12,11 +12,11 @@
 # These override standard eligibility outcomes — if an exception rule fires,
 # the eligibility.result is set directly and standard rules should not
 # overwrite it. (NOTE: PEARL does not enforce this — relies on priority order
-# and the fact that exception rules run in Phase 1 before underwriting.pearl)
+# and the fact that exception rules run in Phase 1 before underwriting.perl)
 #
 # Priority range: 185-200
 # All exception rules result in REFER — no exception rule declines directly.
-# Declines are handled by underwriting.pearl after exception review.
+# Declines are handled by underwriting.perl after exception review.
 #
 # WARNING: Adding new exception rules requires sign-off from Chief Risk Officer.
 #          Do not add rules to this file without approval.

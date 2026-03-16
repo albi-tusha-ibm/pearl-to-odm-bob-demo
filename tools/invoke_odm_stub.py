@@ -22,7 +22,7 @@
 # ============================================================================
 
 """
-Pearl Modernization - ODM REST API Invocation Demo
+Perl Modernization - ODM REST API Invocation Demo
 
 This script demonstrates how to call the IBM ODM Decision Service REST endpoint
 with sample loan data. This is a STUB implementation that shows the request/response
@@ -60,7 +60,7 @@ class ODMInvoker:
             base_dir: Base directory of the project
         """
         self.base_dir = base_dir
-        self.sample_file = base_dir / "legacy_pearl" / "samples" / "loan_app_041.json"
+        self.sample_file = base_dir / "legacy_perl" / "samples" / "loan_app_041.json"
         
         # ODM endpoint configuration
         self.odm_host = "localhost"
@@ -209,7 +209,7 @@ class ODMInvoker:
         print()
         print(self.generate_curl_command(loan_data))
         print()
-        print("Note: Run this command from the legacy_pearl/samples/ directory")
+        print("Note: Run this command from the legacy_perl/samples/ directory")
         print()
         
         # Print Python requests example
@@ -264,7 +264,7 @@ class ODMInvoker:
         print("   pip install requests")
         print()
         print("4. Test with Sample Data:")
-        print("   - Use the 60 test cases in legacy_pearl/samples/")
+        print("   - Use the 60 test cases in legacy_perl/samples/")
         print("   - Compare results against expected_decisions.csv")
         print("   - Run parity_check.py to validate accuracy")
         print()
@@ -290,8 +290,8 @@ class ODMInvoker:
         print("-" * 70)
         print()
         print("Test Data:")
-        print(f"  - Sample loans: {self.base_dir / 'legacy_pearl' / 'samples'}")
-        print(f"  - Expected results: {self.base_dir / 'legacy_pearl' / 'samples' / 'expected_decisions.csv'}")
+        print(f"  - Sample loans: {self.base_dir / 'legacy_perl' / 'samples'}")
+        print(f"  - Expected results: {self.base_dir / 'legacy_perl' / 'samples' / 'expected_decisions.csv'}")
         print()
         print("ODM Documentation:")
         print("  - Decision Service REST API: IBM ODM Knowledge Center")

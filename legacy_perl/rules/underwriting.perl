@@ -1,5 +1,5 @@
 # =============================================================================
-# PEARL Rule File: underwriting.pearl
+# PEARL Rule File: underwriting.perl
 # Description:    Standard eligibility rules for MI underwriting decisions
 # Author:         Risk Policy / IT (original author unknown)
 # Created:        ~2017 (estimated — no version control before 2019)
@@ -7,11 +7,11 @@
 # =============================================================================
 # NOTE: These rules implement core eligibility logic for mortgage insurance.
 #       Pricing and doc requirements are handled in separate rule files.
-#       See ruleflow.pearl for execution order.
+#       See ruleflow.perl for execution order.
 #
 # WARNING: No default approve rule exists in this file. If no decline or refer
 #          rule fires, the loan is implicitly passed through. This is a known
-#          gap — see TODO in ruleflow.pearl.
+#          gap — see TODO in ruleflow.perl.
 # =============================================================================
 
 
@@ -248,7 +248,7 @@ END
 # Loans with AUS approval meeting standard criteria are approved
 # NOTE: this is the ONLY explicit approve rule in this file
 #       If this rule does not fire and no decline/refer fires, outcome is
-#       undefined — known gap, see ruleflow.pearl TODO
+#       undefined — known gap, see ruleflow.perl TODO
 # FICO minimum 640 for AUS approve path — see policy doc v2.1
 # Added 2019-03 per risk policy update
 # -----------------------------------------------------------------------------

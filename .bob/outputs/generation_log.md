@@ -20,12 +20,12 @@ This repository showcases a complete mortgage insurance underwriting system mode
 **Objective**: Create realistic legacy rule system with intentional technical debt
 
 **Artifacts Created**:
-- 5 PEARL-DSL rule files (`.pearl` format)
-  * `underwriting.pearl` - 12 eligibility rules
-  * `pricing.pearl` - 8 rate adjustment rules
-  * `docs_required.pearl` - 6 documentation rules
-  * `exceptions.pearl` - 7 exception handling rules
-  * `ruleflow.pearl` - Execution orchestration
+- 5 PEARL-DSL rule files (`.perl` format)
+  * `underwriting.perl` - 12 eligibility rules
+  * `pricing.perl` - 8 rate adjustment rules
+  * `docs_required.perl` - 6 documentation rules
+  * `exceptions.perl` - 7 exception handling rules
+  * `ruleflow.perl` - Execution orchestration
 - 2 CSV lookup tables
   * `pricing_matrix.csv` - 8x6 rate grid (48 cells)
   * `ltv_thresholds.csv` - 4x3 threshold matrix (12 cells)
@@ -222,7 +222,7 @@ Decision Service: MGIC_Underwriting_Service
 ## Repository Statistics
 
 ### File Counts by Category
-- **Legacy Rules**: 5 .pearl files + 2 CSV tables = 7 files
+- **Legacy Rules**: 5 .perl files + 2 CSV tables = 7 files
 - **Test Data**: 60 JSON files + 1 CSV ground truth = 61 files
 - **ODM Design**: 6 markdown docs + 1 export README = 7 files
 - **Utilities**: 2 Python scripts = 2 files
@@ -231,7 +231,7 @@ Decision Service: MGIC_Underwriting_Service
 - **Total Files**: **83 files**
 
 ### Lines of Content by Category
-- **Legacy Rules**: ~800 lines (.pearl) + ~100 lines (CSV) = 900 lines
+- **Legacy Rules**: ~800 lines (.perl) + ~100 lines (CSV) = 900 lines
 - **Test Data**: ~3,600 lines (JSON) + ~120 lines (CSV) = 3,720 lines
 - **ODM Design**: ~8,300 lines (markdown)
 - **Utilities**: ~563 lines (Python)
@@ -336,7 +336,7 @@ Decision Service: MGIC_Underwriting_Service
 cd pearl-to-odm-bob-demo/
 
 # Review legacy rules
-cat legacy_pearl/rules/underwriting.pearl
+cat legacy_pearl/rules/underwriting.perl
 
 # Examine test data
 cat legacy_pearl/samples/loan_app_001.json
@@ -361,7 +361,7 @@ cat .bob/prompts/01_create_legacy_rules.txt
 
 ### For Developers
 - **Extend test data**: Add more loan scenarios in `legacy_pearl/samples/`
-- **Modify rules**: Update `.pearl` files and re-run parity check
+- **Modify rules**: Update `.perl` files and re-run parity check
 - **Enhance utilities**: Extend `parity_check.py` with new validations
 - **Implement ODM**: Use design docs to build actual ODM projects
 

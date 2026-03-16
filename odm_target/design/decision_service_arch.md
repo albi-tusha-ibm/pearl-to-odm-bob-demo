@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **MI_Underwriting** Decision Service implements the modernized mortgage insurance underwriting logic, migrated from the legacy PEARL-DSL rule engine to IBM Operational Decision Manager (ODM).
+The **MI_Underwriting** Decision Service implements the modernized mortgage insurance underwriting logic, migrated from the legacy PERL-DSL rule engine to IBM Operational Decision Manager (ODM).
 
 ## Decision Service Structure
 
@@ -121,7 +121,7 @@ The decision service executes rule projects in a specific sequence to mirror leg
 
 2. **Import Decision Service Archive**
    - File → Import → Rule Project
-   - Select: `pearl-to-odm-bob-demo/odm_target/export/MI_Underwriting.zip`
+   - Select: `perl-to-odm-bob-demo/odm_target/export/MI_Underwriting.zip`
    - Click "Finish"
 
 3. **Verify Project Structure**
@@ -139,7 +139,7 @@ The decision service executes rule projects in a specific sequence to mirror leg
 
 5. **Test Locally**
    - Right-click on ruleflow → Run As → Rule Execution
-   - Load sample input from `legacy_pearl/samples/loan_app_001.json`
+   - Load sample input from `legacy_perl/samples/loan_app_001.json`
    - Verify output matches expected decision
 
 ## Deployment to Rule Execution Server (RES)
@@ -268,7 +268,7 @@ curl -X POST http://res-dev.mgic.com:9080/res/api/v1/MI_Underwriting/1.0.0/execu
 
 | Version | Date | Changes |
 |---------|------|---------|
-| 1.0.0 | 2026-03-02 | Initial ODM migration from PEARL-DSL |
+| 1.0.0 | 2026-03-02 | Initial ODM migration from PERL-DSL |
 
 ---
 

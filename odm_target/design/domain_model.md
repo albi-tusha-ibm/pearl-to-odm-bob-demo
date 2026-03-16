@@ -2,7 +2,7 @@
 
 ## Overview
 
-The ODM domain model defines the Business Object Model (BOM) and Execution Object Model (XOM) for the MI_Underwriting decision service. This model represents a significant improvement over the legacy PEARL-DSL flat structure by introducing proper object-oriented design with normalized entities.
+The ODM domain model defines the Business Object Model (BOM) and Execution Object Model (XOM) for the MI_Underwriting decision service. This model represents a significant improvement over the legacy PERL-DSL flat structure by introducing proper object-oriented design with normalized entities.
 
 ## Business Object Model (BOM)
 
@@ -236,7 +236,7 @@ Verbalization: "the loan to value ratio is between 80 and 90"
 
 ## Comparison to Legacy Flat Model
 
-### Legacy PEARL-DSL Structure
+### Legacy PERL-DSL Structure
 
 The legacy system used a flat, denormalized structure:
 

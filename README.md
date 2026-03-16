@@ -1,5 +1,5 @@
-# Pearl Modernization Demo
-## Legacy PEARL-DSL → IBM ODM Migration, Powered by IBM Bob
+# Perl Modernization Demo
+## Legacy PERL-DSL → IBM ODM Migration, Powered by IBM Bob
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)
@@ -25,21 +25,21 @@ Before exploring this demo, ensure you have:
 1. **Clone the repository:**
    ```bash
    git clone <repository-url>
-   cd pearl-to-odm-bob-demo
+   cd perl-to-odm-bob-demo
    ```
 
 2. **Explore the legacy rules:**
    ```bash
-   # View the legacy PEARL-DSL rules
-   cat legacy_pearl/rules/underwriting.pearl
-   cat legacy_pearl/rules/pricing.pearl
+   # View the legacy PERL-DSL rules
+   cat legacy_perl/rules/underwriting.perl
+   cat legacy_perl/rules/pricing.perl
    ```
 
 3. **Review test data:**
    ```bash
    # Examine sample loan applications
-   cat legacy_pearl/samples/loan_app_001.json
-   cat legacy_pearl/samples/expected_decisions.csv
+   cat legacy_perl/samples/loan_app_001.json
+   cat legacy_perl/samples/expected_decisions.csv
    ```
 
 4. **Run the parity check:**
@@ -52,7 +52,7 @@ Before exploring this demo, ensure you have:
    ```bash
    # Read the modernized architecture
    cat odm_target/design/decision_service_arch.md
-   cat odm_target/design/mappings_pearl_to_odm.md
+   cat odm_target/design/mappings_perl_to_odm.md
    ```
 
 6. **See integration example:**
@@ -65,7 +65,7 @@ Before exploring this demo, ensure you have:
 
 ## What Is This Repository?
 
-This repo tells the story of how **IBM Bob** modernizes a legacy mortgage-insurance (MI) underwriting rules engine — nicknamed **"PEARL"** — into a governed, auditable, business-readable **IBM Operational Decision Manager (ODM)** Decision Service.
+This repo tells the story of how **IBM Bob** modernizes a legacy mortgage-insurance (MI) underwriting rules engine — nicknamed **"PERL"** — into a governed, auditable, business-readable **IBM Operational Decision Manager (ODM)** Decision Service.
 
 The scenario backdrop is a leading mortgage insurance (MI) carrier whose underwriting logic has accumulated over years in a proprietary internal rules engine. The legacy system is functional but fragile — rules are scattered, inconsistently named, occasionally duplicated, and difficult for business users to read or change safely.
 
@@ -76,7 +76,7 @@ The scenario backdrop is a leading mortgage insurance (MI) carrier whose underwr
 ## The Modernization Story
 
 ```
-Legacy PEARL-DSL Rules
+Legacy PERL-DSL Rules
         │
         ▼
   IBM Bob (AI Modernization)
@@ -103,16 +103,16 @@ Legacy PEARL-DSL Rules
 ## Repository Structure
 
 ```
-pearl-to-odm-bob-demo/
+perl-to-odm-bob-demo/
 ├─ README.md                          ← You are here
 │
-├─ legacy_pearl/                      ← The "before" state
+├─ legacy_perl/                       ← The "before" state
 │  ├─ rules/
-│  │  ├─ underwriting.pearl           ← Eligibility rules (14–16 rules)
-│  │  ├─ pricing.pearl                ← MI rate pricing rules (6–8 rules)
-│  │  ├─ docs_required.pearl          ← Documentation requirement rules (6–7 rules)
-│  │  ├─ exceptions.pearl             ← Manual UW exception rules (3–4 rules)
-│  │  └─ ruleflow.pearl               ← Execution order definition
+│  │  ├─ underwriting.perl            ← Eligibility rules (14–16 rules)
+│  │  ├─ pricing.perl                 ← MI rate pricing rules (6–8 rules)
+│  │  ├─ docs_required.perl           ← Documentation requirement rules (6–7 rules)
+│  │  ├─ exceptions.perl              ← Manual UW exception rules (3–4 rules)
+│  │  └─ ruleflow.perl                ← Execution order definition
 │  ├─ tables/
 │  │  ├─ pricing_matrix.csv           ← LTV × FICO → miRateBps lookup
 │  │  └─ ltv_thresholds.csv           ← Conventional LTV cutoff reference
@@ -126,7 +126,7 @@ pearl-to-odm-bob-demo/
 │  ├─ design/
 │  │  ├─ decision_service_arch.md     ← ODM Decision Service architecture
 │  │  ├─ domain_model.md              ← BOM/XOM class model description
-│  │  ├─ mappings_pearl_to_odm.md     ← Rule-by-rule migration mapping
+│  │  ├─ mappings_perl_to_odm.md      ← Rule-by-rule migration mapping
 │  │  ├─ parity_report.md             ← Parity analysis vs. legacy ground truth
 │  │  ├─ change_log.md                ← Business-readable change explanations
 │  │  └─ governance_and_release.md    ← Roles, versioning, promotion, audit
@@ -152,7 +152,7 @@ pearl-to-odm-bob-demo/
 ## Demo Narrative: Step-by-Step
 
 ### Step 1 — Explore the Legacy Rules
-Open `legacy_pearl/rules/` and read through the PEARL-DSL files. Notice:
+Open `legacy_perl/rules/` and read through the PERL-DSL files. Notice:
 - Inconsistent naming (`FICO` vs `creditScore`)
 - Duplicate thresholds (LTV 97 vs 97.01)
 - Sparse or contradictory comments
@@ -162,7 +162,7 @@ Open `legacy_pearl/rules/` and read through the PEARL-DSL files. Notice:
 **Talking point:** *"This is what we typically find in legacy rules engines — functional but fragile. Business users can't safely change these rules, and auditors can't easily trace decisions."*
 
 ### Step 2 — Review the Test Data
-Open `legacy_pearl/samples/` and examine a few `loan_app_###.json` files. Then open `expected_decisions.csv` to see the legacy ground truth decisions.
+Open `legacy_perl/samples/` and examine a few `loan_app_###.json` files. Then open `expected_decisions.csv` to see the legacy ground truth decisions.
 
 **Talking point:** *"We generated 60 representative loan scenarios covering the full range of LTV, FICO, DTI, occupancy, and property types — including edge cases that trigger exceptions."*
 
@@ -176,7 +176,7 @@ This reads `expected_decisions.csv` and (if `odm_results/` is present) compares 
 Open `odm_target/design/` and walk through:
 1. `decision_service_arch.md` — How the Decision Service is structured
 2. `domain_model.md` — The clean BOM/XOM class model
-3. `mappings_pearl_to_odm.md` — Every legacy rule mapped to its ODM counterpart
+3. `mappings_perl_to_odm.md` — Every legacy rule mapped to its ODM counterpart
 4. `change_log.md` — Plain-language explanation of every change made
 
 **Talking point:** *"Bob resolved duplicates, eliminated dead rules, and normalized thresholds — all documented in business language that underwriters and auditors can review."*
@@ -297,7 +297,7 @@ We welcome contributions to improve this demonstration project! Please see our [
 
 | Artifact | Status |
 |----------|--------|
-| 30–35 legacy PEARL-DSL rules across 5 rule files | ✅ Complete |
+| 30–35 legacy PERL-DSL rules across 5 rule files | ✅ Complete |
 | 2 lookup tables (pricing matrix, LTV thresholds) | ✅ Complete |
 | 60 synthetic loan application JSON test files | ✅ Complete |
 | `expected_decisions.csv` (legacy ground truth, 60 rows) | ✅ Complete |
@@ -309,4 +309,4 @@ We welcome contributions to improve this demonstration project! Please see our [
 ---
 
 *Generated by IBM Bob — AI-Powered Rules Modernization*
-*Scenario: Pearl Modernization Demo | Version: 1.0.0 | Date: 2026-02-27*
+*Scenario: Perl Modernization Demo | Version: 1.0.0 | Date: 2026-02-27*

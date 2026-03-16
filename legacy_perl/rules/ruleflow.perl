@@ -1,5 +1,5 @@
 # =============================================================================
-# PEARL Rule File: ruleflow.pearl
+# PEARL Rule File: ruleflow.perl
 # Description:    Ruleflow definition — controls execution order of rule phases
 # Author:         IT / Rules Engine Team
 # Created:        ~2019 (estimated — pre-dates version control)
@@ -38,7 +38,7 @@ RULEFLOW "MI_Underwriting_Flow"
   # PHASE 1: Exception Checks
   # Run first — these can override standard eligibility outcomes
   # Priority range: 185-200
-  # Source: exceptions.pearl
+  # Source: exceptions.perl
   #
   # These rules handle high-risk combinations that require senior underwriter
   # review regardless of AUS finding or standard eligibility outcome.
@@ -46,7 +46,7 @@ RULEFLOW "MI_Underwriting_Flow"
   # standard eligibility rules should not overwrite it (relies on priority).
   # ---------------------------------------------------------------------------
   PHASE "ExceptionChecks"
-    INCLUDE exceptions.pearl
+    INCLUDE exceptions.perl
     # Run first — these can override standard eligibility
     # Priority range: 185-200
     # EXC-001: Low FICO + High LTV on primary (PRIORITY 200)
@@ -59,7 +59,7 @@ RULEFLOW "MI_Underwriting_Flow"
   # PHASE 2: Eligibility Evaluation
   # Standard eligibility rules — decline, refer, and approve logic
   # Priority range: 10-100
-  # Source: underwriting.pearl
+  # Source: underwriting.perl
   #
   # NOTE: no default approve rule — implicit pass-through if no decline/refer
   #       fires and ELG-015 does not match. This is a known gap.
@@ -71,7 +71,7 @@ RULEFLOW "MI_Underwriting_Flow"
   # Dead rule:                        ELG-013 (unreachable — see rule comment)
   # ---------------------------------------------------------------------------
   PHASE "EligibilityEvaluation"
-    INCLUDE underwriting.pearl
+    INCLUDE underwriting.perl
     # Standard eligibility rules
     # Priority range: 10-100
     # NOTE: no default approve rule — implicit pass-through if no decline/refer fires
@@ -82,7 +82,7 @@ RULEFLOW "MI_Underwriting_Flow"
   # PHASE 3: Pricing Calculation
   # MI rate pricing — only meaningful if eligibility.result = approve
   # Priority range: 40-50
-  # Source: pricing.pearl
+  # Source: pricing.perl
   #
   # IMPORTANT: pricing does NOT run for refer or decline — each PRICE rule
   #            checks eligibility.result = approve in its WHEN condition.
@@ -97,7 +97,7 @@ RULEFLOW "MI_Underwriting_Flow"
   #   PRICE-007:     Default fallback if no rate matched (135 bps)
   # ---------------------------------------------------------------------------
   PHASE "PricingCalculation"
-    INCLUDE pricing.pearl
+    INCLUDE pricing.perl
     # Only runs if eligibility.result = approve
     # Priority range: 40-50
     # IMPORTANT: pricing does NOT run for refer or decline
@@ -107,7 +107,7 @@ RULEFLOW "MI_Underwriting_Flow"
   # PHASE 4: Documentation Requirements
   # Collects required document codes into docs.requirements array
   # Priority range: 20-30
-  # Source: docs_required.pearl
+  # Source: docs_required.perl
   #
   # Runs for all outcomes EXCEPT decline.
   # Multiple DOC rules can fire for a single loan — all applicable docs collected.
@@ -117,7 +117,7 @@ RULEFLOW "MI_Underwriting_Flow"
   #       TODO: add phase-level condition or engine guard for decline suppression
   # ---------------------------------------------------------------------------
   PHASE "DocumentationRequirements"
-    INCLUDE docs_required.pearl
+    INCLUDE docs_required.perl
     # Runs for all outcomes (approve, refer)
     # Does NOT run for decline
     # Priority range: 20-30

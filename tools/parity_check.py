@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Pearl Modernization - Parity Validation Script
+Perl Modernization - Parity Validation Script
 
-This script compares legacy PEARL-DSL expected decisions against ODM actual decisions
+This script compares legacy PERL-DSL expected decisions against ODM actual decisions
 and produces a detailed parity report.
 
 Purpose:
-    - Validate that ODM decisions match legacy PEARL decisions
+    - Validate that ODM decisions match legacy PERL decisions
     - Calculate match rates for eligibility, pricing, documentation, and flags
     - Generate a detailed parity report for analysis
 
@@ -34,7 +34,7 @@ class ParityChecker:
             base_dir: Base directory of the project
         """
         self.base_dir = base_dir
-        self.legacy_file = base_dir / "legacy_pearl" / "samples" / "expected_decisions.csv"
+        self.legacy_file = base_dir / "legacy_perl" / "samples" / "expected_decisions.csv"
         self.odm_file = base_dir / "odm_results" / "odm_decisions.csv"
         self.report_file = base_dir / "tools" / "parity_summary.txt"
         
@@ -317,7 +317,7 @@ class ParityChecker:
             print()
             print("To generate ODM results:")
             print("  1. Deploy the MI_Underwriting Decision Service to IBM ODM RES")
-            print("  2. Run the decision service against all test cases in legacy_pearl/samples/")
+            print("  2. Run the decision service against all test cases in legacy_perl/samples/")
             print("  3. Save results to odm_results/odm_decisions.csv (same schema as expected_decisions.csv)")
             print()
             print("Parity validation cannot proceed without ODM results.")

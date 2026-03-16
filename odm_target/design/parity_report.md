@@ -4,7 +4,7 @@
 
 **Migration Status**: ✅ **PASSED** (98.3% parity achieved)
 
-The ODM implementation has been validated against 60 legacy PEARL-DSL test cases, achieving 98.3% decision parity. This exceeds the acceptance criteria of ≥95% parity and demonstrates that the modernized system accurately replicates legacy behavior while introducing targeted improvements.
+The ODM implementation has been validated against 60 legacy PERL-DSL test cases, achieving 98.3% decision parity. This exceeds the acceptance criteria of ≥95% parity and demonstrates that the modernized system accurately replicates legacy behavior while introducing targeted improvements.
 
 ### Key Metrics
 
@@ -169,7 +169,7 @@ All exception flags (HIGH_RISK, MANUAL_REVIEW, FRAUD_SUSPECTED) matched between 
 
 **Calculated LTV**: 78.0%
 
-#### Legacy PEARL-DSL Execution
+#### Legacy PERL-DSL Execution
 
 ```
 1. PRICE-001 (Preferred): LTV ≤ 80 AND FICO ≥ 740 AND occupancy == PRIMARY
@@ -187,7 +187,7 @@ All exception flags (HIGH_RISK, MANUAL_REVIEW, FRAUD_SUSPECTED) matched between 
    → Result: MATCH → 135 bps
 ```
 
-**Issue**: Legacy rule PRICE-001 should have matched but didn't due to implementation bug or rule ordering issue in PEARL-DSL engine.
+**Issue**: Legacy rule PRICE-001 should have matched but didn't due to implementation bug or rule ordering issue in PERL-DSL engine.
 
 #### ODM Execution
 
@@ -225,16 +225,16 @@ Row 1: LTV ≤ 80 AND FICO ≥ 740 AND occupancy == PRIMARY
 
 ### Test Environment
 
-- **Legacy System**: PEARL-DSL engine v2.3.1
+- **Legacy System**: PERL-DSL engine v2.3.1
 - **ODM System**: IBM ODM 8.11.0
-- **Test Data**: 60 loan applications (legacy_pearl/samples/)
-- **Expected Outcomes**: legacy_pearl/samples/expected_decisions.csv
+- **Test Data**: 60 loan applications (legacy_perl/samples/)
+- **Expected Outcomes**: legacy_perl/samples/expected_decisions.csv
 
 ### Execution Process
 
 1. **Legacy Execution**:
    - Load loan application JSON
-   - Execute PEARL-DSL rules
+   - Execute PERL-DSL rules
    - Capture outcome, pricing, documentation, flags
    - Record execution time
 
@@ -261,9 +261,9 @@ Row 1: LTV ≤ 80 AND FICO ≥ 740 AND occupancy == PRIMARY
 ```bash
 # Run parity validation
 python validate_parity.py \
-  --legacy-samples legacy_pearl/samples/ \
+  --legacy-samples legacy_perl/samples/ \
   --odm-endpoint http://res-dev.mgic.com:9080/res/api/v1/MI_Underwriting/1.0.0/execute \
-  --expected-decisions legacy_pearl/samples/expected_decisions.csv \
+  --expected-decisions legacy_perl/samples/expected_decisions.csv \
   --output-report parity_report.json
 
 # Expected output:
@@ -277,14 +277,14 @@ python validate_parity.py \
 
 ### Execution Time
 
-| Metric | Legacy PEARL-DSL | ODM | Improvement |
+| Metric | Legacy PERL-DSL | ODM | Improvement |
 |--------|------------------|-----|-------------|
 | **Average Latency** | 187ms | 92ms | 51% faster |
 | **P95 Latency** | 245ms | 118ms | 52% faster |
 | **P99 Latency** | 312ms | 145ms | 54% faster |
 | **Throughput** | 320 decisions/sec | 650 decisions/sec | 103% increase |
 
-**Key Insight**: ODM's compiled Java bytecode significantly outperforms interpreted PEARL-DSL.
+**Key Insight**: ODM's compiled Java bytecode significantly outperforms interpreted PERL-DSL.
 
 ---
 

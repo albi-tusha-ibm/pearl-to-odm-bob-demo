@@ -1,5 +1,5 @@
 # =============================================================================
-# PEARL Rule File: pricing.pearl
+# PEARL Rule File: pricing.perl
 # Description:    MI rate pricing rules — sets miRateBps based on LTV/credit
 # Author:         Pricing Team / IT
 # Created:        2021-06
@@ -10,7 +10,7 @@
 #
 # Note: refer cases do not price — handled upstream
 #       Decline cases also do not price — this file assumes eligibility.result
-#       has already been set by underwriting.pearl and exceptions.pearl
+#       has already been set by underwriting.perl and exceptions.perl
 #
 # IMPORTANT: All PRICE rules share PRIORITY 50 (except PRICE-006 and PRICE-007)
 #            Only one pricing rule should fire per loan — bands are designed to

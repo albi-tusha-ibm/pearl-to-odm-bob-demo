@@ -1,8 +1,8 @@
-# PEARL-DSL to ODM Rule Mappings
+# PERL-DSL to ODM Rule Mappings
 
 ## Overview
 
-This document provides a comprehensive mapping of all legacy PEARL-DSL rules to their corresponding ODM artifacts. The migration consolidates 34 legacy rules into a more maintainable ODM structure using decision tables, action rules, and ruleflows.
+This document provides a comprehensive mapping of all legacy PERL-DSL rules to their corresponding ODM artifacts. The migration consolidates 34 legacy rules into a more maintainable ODM structure using decision tables, action rules, and ruleflows.
 
 ## Mapping Summary
 
@@ -22,7 +22,7 @@ This document provides a comprehensive mapping of all legacy PEARL-DSL rules to 
 
 Exception rules remain as high-priority action rules to ensure they fire before any other logic.
 
-| PEARL Rule | ODM Artifact | Type | Project | Notes |
+| PERL Rule | ODM Artifact | Type | Project | Notes |
 |------------|--------------|------|---------|-------|
 | EXC-001 | Bankruptcy Exception Rule | Action Rule | ExceptionRules | Direct conversion; sets outcome to DECLINE and adds HIGH_RISK flag |
 | EXC-002 | Foreclosure Exception Rule | Action Rule | ExceptionRules | Direct conversion; sets outcome to DECLINE and adds HIGH_RISK flag |
@@ -48,7 +48,7 @@ THEN
 
 Eligibility rules are converted to a combination of decision table (for threshold checks) and action rules (for complex logic).
 
-| PEARL Rule | ODM Artifact | Type | Project | Notes |
+| PERL Rule | ODM Artifact | Type | Project | Notes |
 |------------|--------------|------|---------|-------|
 | ELG-001 | LTV Threshold Check | Decision Table Row | EligibilityRules | Consolidated into Eligibility Decision Table |
 | ELG-002 | High LTV Decline (97%) | Decision Table Row | EligibilityRules | **CONSOLIDATED** with ELG-013 into single row |
@@ -89,7 +89,7 @@ Eligibility rules are converted to a combination of decision table (for threshol
 
 All pricing rules consolidated into a single decision table with explicit LTV/FICO bands.
 
-| PEARL Rule | ODM Artifact | Type | Project | Notes |
+| PERL Rule | ODM Artifact | Type | Project | Notes |
 |------------|--------------|------|---------|-------|
 | PRICE-001 | Preferred Pricing | Decision Table Row | PricingRules | Consolidated into Pricing Decision Table |
 | PRICE-002 | Standard Pricing | Decision Table Row | PricingRules | Consolidated into Pricing Decision Table |
@@ -123,7 +123,7 @@ All pricing rules consolidated into a single decision table with explicit LTV/FI
 
 All documentation rules consolidated into a single decision table.
 
-| PEARL Rule | ODM Artifact | Type | Project | Notes |
+| PERL Rule | ODM Artifact | Type | Project | Notes |
 |------------|--------------|------|---------|-------|
 | DOC-001 | Standard Documentation | Decision Table Row | DocumentationRules | Consolidated into Documentation Decision Table |
 | DOC-002 | High LTV Documentation | Decision Table Row | DocumentationRules | Consolidated into Documentation Decision Table |
@@ -193,7 +193,7 @@ The ODM ruleflow mirrors the legacy execution sequence:
 
 **Example**: EXC-001 (Bankruptcy Exception)
 
-**Legacy PEARL-DSL**:
+**Legacy PERL-DSL**:
 ```
 RULE EXC-001 "Bankruptcy Exception"
 WHEN
@@ -220,7 +220,7 @@ THEN
 
 **Example**: PRICE-001 to PRICE-007 → Pricing Decision Table
 
-**Legacy PEARL-DSL** (Sequential):
+**Legacy PERL-DSL** (Sequential):
 ```
 RULE PRICE-001 "Preferred Pricing"
 WHEN LTV <= 80 AND FICO >= 740 AND occupancy == "PRIMARY"
@@ -245,7 +245,7 @@ THEN premiumRate = 0.0055
 
 **Example**: ELG-002 and ELG-013
 
-**Legacy PEARL-DSL**:
+**Legacy PERL-DSL**:
 ```
 RULE ELG-002 "High LTV Decline"
 WHEN LTV > 97
@@ -301,7 +301,7 @@ All 34 legacy rules validated against 60 test cases:
 - **Improvement**: 40% reduction in artifact count; clearer structure
 
 ### Readability
-- **Before**: Technical PEARL-DSL syntax
+- **Before**: Technical PERL-DSL syntax
 - **After**: Business-readable verbalizations
 - **Example**: `LTV > 97` → "the loan to value ratio is more than 97"
 
@@ -311,7 +311,7 @@ All 34 legacy rules validated against 60 test cases:
 - **Improvement**: Full audit trail for compliance
 
 ### Performance
-- **Before**: Interpreted PEARL-DSL; ~200ms per decision
+- **Before**: Interpreted PERL-DSL; ~200ms per decision
 - **After**: Compiled Java bytecode; <100ms per decision
 - **Improvement**: 50% latency reduction
 
@@ -321,7 +321,7 @@ All 34 legacy rules validated against 60 test cases:
 
 | Version | Date | Changes |
 |---------|------|---------|
-| 1.0.0 | 2026-03-02 | Initial PEARL-to-ODM mapping documentation |
+| 1.0.0 | 2026-03-02 | Initial PERL-to-ODM mapping documentation |
 
 ---
 
