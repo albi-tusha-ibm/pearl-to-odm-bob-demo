@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-006",
+  "loan": {
+    "ltv": 85.0,
+    "dti": 55.0,
+    "loanAmount": 310000,
+    "productType": "arm",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 720,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "sfh",
+    "state": "FL",
+    "estimatedValue": 365000
+  },
+  "aus": {
+    "finding": "du_approve"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-035",
+  "loan": {
+    "ltv": 87.0,
+    "dti": 38.0,
+    "loanAmount": 261000,
+    "productType": "fixed",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 700,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "condo",
+    "state": "FL",
+    "estimatedValue": 300000
+  },
+  "aus": {
+    "finding": "du_approve"
+  }
+}

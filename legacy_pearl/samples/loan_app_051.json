@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-051",
+  "loan": {
+    "ltv": 92.0,
+    "dti": 38.0,
+    "loanAmount": 368000,
+    "productType": "fixed",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 680,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "sfh",
+    "state": "FL",
+    "estimatedValue": 400000
+  },
+  "aus": {
+    "finding": "du_approve"
+  }
+}

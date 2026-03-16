@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-016",
+  "loan": {
+    "ltv": 80.0,
+    "dti": 42.0,
+    "loanAmount": 200000,
+    "productType": "arm",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 615,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "sfh",
+    "state": "OH",
+    "estimatedValue": 250000
+  },
+  "aus": {
+    "finding": "none"
+  }
+}

@@ -1,0 +1,90 @@
+PROMPT: Design IBM ODM Decision Service Architecture for Modernized Rules
+
+Convert the legacy PEARL-DSL rules into a well-architected IBM ODM Decision Service, consolidating duplicates and applying best practices.
+
+REQUIREMENTS:
+- Design a modular ODM Decision Service with 4 rule projects:
+  1. Eligibility Rules (underwriting decisions)
+  2. Exception Rules (manual review triggers)
+  3. Pricing Rules (rate adjustments)
+  4. Documentation Rules (required documents)
+
+- Apply ODM best practices:
+  * Convert procedural rules to decision tables where appropriate
+  * Consolidate duplicate rules (3-4 duplicates → 1 canonical rule)
+  * Remove dead rules (2-3 rules that are never triggered)
+  * Normalize terminology and naming conventions
+  * Use decision tables for multi-dimensional logic (LTV/FICO pricing)
+  * Use action rules for simple conditions
+  * Implement proper rule flow with priorities
+
+- Domain model design:
+  * BOM (Business Object Model): Business-friendly class names and attributes
+  * XOM (Execution Object Model): Technical implementation classes
+  * Core classes: Loan, Borrower, Property, Decision, RateAdjustment, DocumentRequirement
+  * Enumerations: OccupancyType, PropertyType, ProductType, AUSFinding, DecisionType
+  * Proper encapsulation and validation
+
+- Transformation strategy:
+  * 34 legacy rules → ~21 ODM artifacts (40% reduction through consolidation)
+  * Pricing matrix CSV → ODM decision table (8x6 grid)
+  * LTV thresholds CSV → ODM decision table (4x3 grid)
+  * Inline conditions → Reusable rule conditions
+  * Scattered logic → Organized rule packages
+
+OUTPUT STRUCTURE:
+Create 6 comprehensive design documents:
+
+1. decision_service_arch.md
+   - Overall architecture diagram (text-based)
+   - Rule project structure
+   - Execution flow
+   - Integration points
+
+2. domain_model.md
+   - BOM class definitions
+   - XOM class definitions
+   - Attribute descriptions
+   - Enumerations
+   - Validation rules
+
+3. mappings_pearl_to_odm.md
+   - Detailed mapping table: Legacy rule → ODM artifact
+   - Transformation rationale for each rule
+   - Consolidation decisions
+   - Rules removed and why
+
+4. parity_report.md
+   - Expected parity: 98-100% (59-60 matches out of 60 test cases)
+   - Known differences and justifications
+   - Improvement opportunities
+   - Test coverage analysis
+
+5. change_log.md
+   - Version history
+   - Rule changes by category
+   - Business impact assessment
+   - Migration timeline
+
+6. governance_and_release.md
+   - Rule governance framework
+   - Change management process
+   - Testing strategy
+   - Deployment approach
+   - Rollback procedures
+
+Also create:
+7. export/README.md
+   - Instructions for exporting ODM rule projects
+   - Import instructions for ODM Rule Designer
+   - Configuration requirements
+   - Testing procedures
+
+DESIGN PRINCIPLES:
+- Maintainability: Clear rule organization, consistent naming
+- Testability: Comprehensive test coverage, easy to validate
+- Performance: Efficient rule execution order
+- Auditability: Clear decision trails, version control
+- Scalability: Easy to add new rules or modify existing ones
+
+Focus on creating a production-ready design that demonstrates ODM best practices and modernization value.

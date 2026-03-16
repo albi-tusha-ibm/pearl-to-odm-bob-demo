@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-036",
+  "loan": {
+    "ltv": 90.0,
+    "dti": 35.0,
+    "loanAmount": 450000,
+    "productType": "fixed",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 720,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "condo",
+    "state": "HI",
+    "estimatedValue": 500000
+  },
+  "aus": {
+    "finding": "lp_accept"
+  }
+}

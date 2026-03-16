@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-012",
+  "loan": {
+    "ltv": 97.0,
+    "dti": 35.0,
+    "loanAmount": 250000,
+    "productType": "arm",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 740,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "sfh",
+    "state": "WI",
+    "estimatedValue": 258000
+  },
+  "aus": {
+    "finding": "lp_accept"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-017",
+  "loan": {
+    "ltv": 85.0,
+    "dti": 51.0,
+    "loanAmount": 320000,
+    "productType": "fixed",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 680,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "condo",
+    "state": "NY",
+    "estimatedValue": 376000
+  },
+  "aus": {
+    "finding": "du_approve"
+  }
+}

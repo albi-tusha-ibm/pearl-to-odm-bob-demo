@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-010",
+  "loan": {
+    "ltv": 85.0,
+    "dti": 35.0,
+    "loanAmount": 340000,
+    "productType": "fixed",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 740,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "2to4",
+    "state": "IL",
+    "estimatedValue": 400000
+  },
+  "aus": {
+    "finding": "lp_accept"
+  }
+}

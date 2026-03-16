@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-060",
+  "loan": {
+    "ltv": 80.0,
+    "dti": 40.0,
+    "loanAmount": 320000,
+    "productType": "fixed",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 680,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "sfh",
+    "state": "NY",
+    "estimatedValue": 400000
+  },
+  "aus": {
+    "finding": "du_approve"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-053",
+  "loan": {
+    "ltv": 84.0,
+    "dti": 38.0,
+    "loanAmount": 336000,
+    "productType": "fixed",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 640,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "sfh",
+    "state": "WI",
+    "estimatedValue": 400000
+  },
+  "aus": {
+    "finding": "du_approve"
+  }
+}

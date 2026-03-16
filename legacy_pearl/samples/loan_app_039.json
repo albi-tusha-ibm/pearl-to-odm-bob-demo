@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-039",
+  "loan": {
+    "ltv": 85.0,
+    "dti": 44.0,
+    "loanAmount": 340000,
+    "productType": "fixed",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 680,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "sfh",
+    "state": "NY",
+    "estimatedValue": 400000
+  },
+  "aus": {
+    "finding": "du_refer"
+  }
+}

@@ -1,0 +1,58 @@
+PROMPT: Generate Comprehensive Test Data for Mortgage Insurance Underwriting
+
+Create 60 realistic loan application JSON files that comprehensively test the legacy PEARL-DSL rules and provide ground truth for parity validation.
+
+REQUIREMENTS:
+- Generate 60 loan applications with realistic data distributions:
+  * 18 DECLINE scenarios (30%)
+  * 22 REFER scenarios (37%)
+  * 20 APPROVE scenarios (33%)
+
+- Coverage across all decision factors:
+  * LTV range: 75-98% (incremental coverage)
+  * FICO range: 580-780 (low, medium, high bands)
+  * DTI range: 28-55% (conservative to aggressive)
+  * Product types: Conventional, FHA, VA, USDA
+  * Occupancy: Primary (60%), Secondary (20%), Investment (20%)
+  * Property types: SFR (50%), Condo (25%), Townhouse (15%), Multi-unit (10%)
+  * States: CA, TX, FL, NY, IL (distributed)
+  * AUS findings: Accept, Approve/Eligible, Refer, Caution
+
+- Edge cases to include:
+  * Boundary conditions (LTV at 80%, 90%, 95%)
+  * Exception triggers (high DTI + low FICO, investment property + high LTV)
+  * Documentation requirement variations
+  * State-specific rule triggers
+  * Pricing band boundaries
+  * Combination scenarios (multiple risk factors)
+
+- Realistic borrower profiles:
+  * Income: $40,000 - $250,000
+  * Loan amounts: $150,000 - $750,000
+  * Property values: $200,000 - $850,000
+  * Employment: W2, Self-employed, Retired
+  * Credit history variations
+
+OUTPUT STRUCTURE:
+- 60 JSON files: loan_app_001.json through loan_app_060.json
+- Each file contains:
+  * Loan details (amount, purpose, product type)
+  * Borrower information (income, employment, credit score)
+  * Property details (value, type, occupancy, state)
+  * AUS findings
+  * Application date
+
+- 1 CSV file: expected_decisions.csv
+  * Columns: loan_id, expected_decision, expected_rate_adjustment, expected_docs, expected_exceptions, rationale
+  * Ground truth for parity validation
+  * Detailed rationale explaining why each decision was made
+
+VALIDATION:
+Ensure test data exercises:
+- All 34 legacy rules at least once
+- All pricing matrix cells
+- All documentation requirement combinations
+- All exception triggers
+- Edge cases and boundary conditions
+
+Make the data realistic enough to use in demos but varied enough to catch rule logic issues.

@@ -1,0 +1,264 @@
+# =============================================================================
+# PEARL Rule File: underwriting.pearl
+# Description:    Standard eligibility rules for MI underwriting decisions
+# Author:         Risk Policy / IT (original author unknown)
+# Created:        ~2017 (estimated — no version control before 2019)
+# Last Modified:  2023-01 (approx)
+# =============================================================================
+# NOTE: These rules implement core eligibility logic for mortgage insurance.
+#       Pricing and doc requirements are handled in separate rule files.
+#       See ruleflow.pearl for execution order.
+#
+# WARNING: No default approve rule exists in this file. If no decline or refer
+#          rule fires, the loan is implicitly passed through. This is a known
+#          gap — see TODO in ruleflow.pearl.
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# ELG-001 | Credit Score Minimum
+# FICO minimum — see policy doc v2.1
+# Added 2019-03 per risk policy update
+# -----------------------------------------------------------------------------
+RULE "ELG-001" PRIORITY 100 EFFECT decline
+WHEN
+    borrower.creditScore < 620
+THEN
+    ACTION "Credit score below minimum threshold"
+    SET eligibility.result = decline
+    FLAG "CREDIT_DECLINE"
+END
+
+
+# -----------------------------------------------------------------------------
+# ELG-002 | Maximum LTV
+# LTV hard cap — 97% per GSE alignment (2019-03)
+# TODO: confirm whether 97.00 is inclusive or exclusive with underwriting team
+# -----------------------------------------------------------------------------
+RULE "ELG-002" PRIORITY 99 EFFECT decline
+WHEN
+    loan.ltv > 97
+THEN
+    ACTION "LTV exceeds maximum allowable 97%"
+    SET eligibility.result = decline
+    FLAG "LTV_DECLINE"
+END
+
+
+# -----------------------------------------------------------------------------
+# ELG-003 | Maximum DTI
+# DTI cap set at 50% — aligns with DU/LP max
+# Added 2019-03 per risk policy update
+# -----------------------------------------------------------------------------
+RULE "ELG-003" PRIORITY 98 EFFECT decline
+WHEN
+    loan.dti > 50
+THEN
+    ACTION "DTI exceeds maximum 50%"
+    SET eligibility.result = decline
+    FLAG "DTI_DECLINE"
+END
+
+
+# -----------------------------------------------------------------------------
+# ELG-004 | Investment Property LTV
+# Investment properties capped at 85% LTV per risk policy
+# NOTE: this rule fires AFTER ELG-002 — redundant for LTV > 97 cases
+# -----------------------------------------------------------------------------
+RULE "ELG-004" PRIORITY 95 EFFECT decline
+WHEN
+    loan.occupancy = investment
+    AND loan.ltv > 85
+THEN
+    ACTION "Investment property LTV exceeds 85%"
+    SET eligibility.result = decline
+    FLAG "INVESTMENT_LTV_DECLINE"
+END
+
+
+# -----------------------------------------------------------------------------
+# ELG-005 | 2-4 Unit Property LTV
+# Multi-unit properties limited to 80% LTV
+# Added 2020-06 per updated property type guidelines
+# -----------------------------------------------------------------------------
+RULE "ELG-005" PRIORITY 90 EFFECT decline
+WHEN
+    property.type = 2to4
+    AND loan.ltv > 80
+THEN
+    ACTION "2-4 unit property LTV exceeds 80%"
+    SET eligibility.result = decline
+    FLAG "MULTI_UNIT_LTV_DECLINE"
+END
+
+
+# -----------------------------------------------------------------------------
+# ELG-006 | ARM Product LTV Cap
+# ARM loans not eligible above 95% LTV — per product guidelines
+# NOTE: this rule approves ARM at exactly 95 — is that correct? Check with IT
+# -----------------------------------------------------------------------------
+RULE "ELG-006" PRIORITY 85 EFFECT decline
+WHEN
+    loan.productType = arm
+    AND loan.ltv > 95
+THEN
+    ACTION "ARM products not eligible above 95% LTV"
+    SET eligibility.result = decline
+    FLAG "ARM_LTV_DECLINE"
+END
+
+
+# -----------------------------------------------------------------------------
+# ELG-007 | Low FICO + High LTV Refer
+# Borderline FICO (620-639) with high LTV (>90) — manual review required
+# FICO range 620-639 is considered "marginal" per credit policy
+# TODO: confirm threshold with underwriting team — was 680 before 2021 change
+# -----------------------------------------------------------------------------
+RULE "ELG-007" PRIORITY 80 EFFECT refer
+WHEN
+    borrower.creditScore >= 620
+    AND borrower.creditScore < 640
+    AND loan.ltv > 90
+THEN
+    ACTION "Low credit score with high LTV requires manual review"
+    SET eligibility.result = refer
+    FLAG "MANUAL_UW_REQUIRED"
+END
+
+
+# -----------------------------------------------------------------------------
+# ELG-008 | DU Refer Finding
+# DU Refer/Eligible or Refer/Ineligible — both require manual UW
+# Added 2019-03 per AUS integration policy
+# -----------------------------------------------------------------------------
+RULE "ELG-008" PRIORITY 75 EFFECT refer
+WHEN
+    aus.finding = du_refer
+THEN
+    ACTION "DU Refer requires manual underwriting review"
+    SET eligibility.result = refer
+    FLAG "AUS_REFER"
+END
+
+
+# -----------------------------------------------------------------------------
+# ELG-009 | No AUS Finding
+# Loans submitted without AUS must go to manual underwriting
+# NOTE: this fires for loans where AUS was not run — should this be a decline?
+#       Left as refer per 2020-11 compliance memo but flagged for review
+# -----------------------------------------------------------------------------
+RULE "ELG-009" PRIORITY 75 EFFECT refer
+WHEN
+    aus.finding = none
+THEN
+    ACTION "No AUS finding — manual underwriting required"
+    SET eligibility.result = refer
+    FLAG "NO_AUS"
+    FLAG "MANUAL_UW_REQUIRED"
+END
+
+
+# -----------------------------------------------------------------------------
+# ELG-010 | High DTI + Marginal Credit
+# DTI > 43 with FICO < 680 — compensating factors required
+# Added 2021-07 per updated risk layering policy
+# -----------------------------------------------------------------------------
+RULE "ELG-010" PRIORITY 70 EFFECT refer
+WHEN
+    loan.dti > 43
+    AND borrower.creditScore < 680
+THEN
+    ACTION "High DTI with marginal credit requires review"
+    SET eligibility.result = refer
+    FLAG "RISK_LAYERING"
+END
+
+
+# -----------------------------------------------------------------------------
+# ELG-011 | Condo High LTV
+# Condos above 90% LTV require additional project review
+# NOTE: condo project approval status not captured in current data model
+#       This rule is a proxy until condo approval field is added
+# -----------------------------------------------------------------------------
+RULE "ELG-011" PRIORITY 65 EFFECT refer
+WHEN
+    property.type = condo
+    AND loan.ltv > 90
+THEN
+    ACTION "Condo above 90% LTV requires additional review"
+    SET eligibility.result = refer
+    FLAG "CONDO_REVIEW"
+END
+
+
+# -----------------------------------------------------------------------------
+# ELG-012 | Second Home LTV Cap
+# Second homes limited to 90% LTV per product guidelines
+# Added 2019-03 per risk policy update
+# -----------------------------------------------------------------------------
+RULE "ELG-012" PRIORITY 60 EFFECT decline
+WHEN
+    loan.occupancy = second
+    AND loan.ltv > 90
+THEN
+    ACTION "Second home LTV exceeds 90% maximum"
+    SET eligibility.result = decline
+    FLAG "SECOND_HOME_LTV_DECLINE"
+END
+
+
+# -----------------------------------------------------------------------------
+# ELG-013 | LTV Exceeds Program Maximum  *** DEAD RULE — UNREACHABLE ***
+# NOTE: this rule can NEVER fire. ELG-002 (PRIORITY 99) already declines any
+#       loan with LTV > 97. This rule requires LTV > 97.01, which is a subset
+#       of LTV > 97. ELG-002 will always fire first and set eligibility.result
+#       to decline before this rule is evaluated.
+# NOTE: this may overlap with ELG-002, check with IT
+# TODO: remove this rule in next cleanup cycle — added in error during 2021 migration
+# -----------------------------------------------------------------------------
+RULE "ELG-013" PRIORITY 55 EFFECT decline
+WHEN
+    loan.ltv > 97.01
+THEN
+    ACTION "LTV exceeds program maximum"
+    SET eligibility.result = decline
+    FLAG "LTV_DECLINE"
+END
+
+
+# -----------------------------------------------------------------------------
+# ELG-014 | Jumbo Loan + Sub-700 Credit
+# Loan amounts above conforming limit ($726,200) with FICO < 700
+# Conforming limit updated 2023-01 — was $647,200 prior
+# TODO: parameterize conforming limit — hardcoded value will need update again
+# -----------------------------------------------------------------------------
+RULE "ELG-014" PRIORITY 50 EFFECT refer
+WHEN
+    loan.loanAmount > 726200
+    AND borrower.creditScore < 700
+THEN
+    ACTION "Jumbo loan amount with sub-700 credit score requires review"
+    SET eligibility.result = refer
+    FLAG "JUMBO_CREDIT_REVIEW"
+END
+
+
+# -----------------------------------------------------------------------------
+# ELG-015 | AUS Approve — Standard Eligibility Pass
+# Loans with AUS approval meeting standard criteria are approved
+# NOTE: this is the ONLY explicit approve rule in this file
+#       If this rule does not fire and no decline/refer fires, outcome is
+#       undefined — known gap, see ruleflow.pearl TODO
+# FICO minimum 640 for AUS approve path — see policy doc v2.1
+# Added 2019-03 per risk policy update
+# -----------------------------------------------------------------------------
+RULE "ELG-015" PRIORITY 10 EFFECT approve
+WHEN
+    aus.finding IN (du_approve, lp_accept)
+    AND borrower.creditScore >= 640
+    AND loan.ltv <= 97
+    AND loan.dti <= 50
+THEN
+    ACTION "AUS approved — meets standard eligibility criteria"
+    SET eligibility.result = approve
+END

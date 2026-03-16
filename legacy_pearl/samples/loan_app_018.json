@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-018",
+  "loan": {
+    "ltv": 88.0,
+    "dti": 38.0,
+    "loanAmount": 264000,
+    "productType": "fixed",
+    "occupancy": "investment"
+  },
+  "borrower": {
+    "creditScore": 700,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "condo",
+    "state": "FL",
+    "estimatedValue": 300000
+  },
+  "aus": {
+    "finding": "du_approve"
+  }
+}

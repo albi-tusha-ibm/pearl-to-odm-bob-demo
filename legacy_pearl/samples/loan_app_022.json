@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-022",
+  "loan": {
+    "ltv": 90.0,
+    "dti": 35.0,
+    "loanAmount": 360000,
+    "productType": "fixed",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 720,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "condo",
+    "state": "CA",
+    "estimatedValue": 400000
+  },
+  "aus": {
+    "finding": "du_refer"
+  }
+}

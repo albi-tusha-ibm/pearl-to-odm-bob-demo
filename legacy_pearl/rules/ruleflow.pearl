@@ -1,0 +1,127 @@
+# =============================================================================
+# PEARL Rule File: ruleflow.pearl
+# Description:    Ruleflow definition — controls execution order of rule phases
+# Author:         IT / Rules Engine Team
+# Created:        ~2019 (estimated — pre-dates version control)
+# Last Modified:  2023-01 (approx — check with IT)
+# =============================================================================
+# MI Underwriting Decision Flow
+# Last updated: 2023-01 (approx — check with IT)
+# NOTE: order matters; exceptions must run before eligibility
+#
+# Execution model:
+#   - Phases run sequentially in the order defined below
+#   - Within each phase, rules fire in descending PRIORITY order
+#   - A rule fires if its WHEN condition evaluates to true
+#   - Multiple rules can fire within a phase (no first-match-only semantics)
+#   - SET actions are applied immediately when a rule fires
+#   - FLAG actions append to decision.flags (no deduplication)
+#
+# Known issues / TODOs:
+#   - No explicit default approve rule in EligibilityEvaluation phase
+#     If no decline/refer fires and ELG-015 does not match, eligibility.result
+#     remains unset. This is a known gap — downstream systems handle null as
+#     "refer" but this is not documented or enforced here.
+#     TODO: add explicit default rule — this is a known gap (raised 2022-Q2)
+#   - PricingCalculation phase has no guard — it relies on PRICE rules checking
+#     eligibility.result = approve internally. If a bug sets result incorrectly,
+#     pricing may run for non-approved loans.
+#     TODO: add phase-level condition guard when PEARL engine supports it
+#   - DocumentationRequirements runs for approve AND refer but not decline.
+#     This is enforced by convention only — no engine-level enforcement.
+# =============================================================================
+
+
+RULEFLOW "MI_Underwriting_Flow"
+
+  # ---------------------------------------------------------------------------
+  # PHASE 1: Exception Checks
+  # Run first — these can override standard eligibility outcomes
+  # Priority range: 185-200
+  # Source: exceptions.pearl
+  #
+  # These rules handle high-risk combinations that require senior underwriter
+  # review regardless of AUS finding or standard eligibility outcome.
+  # If an exception rule fires, eligibility.result is set to refer and
+  # standard eligibility rules should not overwrite it (relies on priority).
+  # ---------------------------------------------------------------------------
+  PHASE "ExceptionChecks"
+    INCLUDE exceptions.pearl
+    # Run first — these can override standard eligibility
+    # Priority range: 185-200
+    # EXC-001: Low FICO + High LTV on primary (PRIORITY 200)
+    # EXC-002: ARM + High LTV + High DTI (PRIORITY 195)
+    # EXC-003: Condo in elevated-risk state (PRIORITY 190)
+    # EXC-004: FTHB + High LTV + Marginal credit (PRIORITY 185)
+  END
+
+  # ---------------------------------------------------------------------------
+  # PHASE 2: Eligibility Evaluation
+  # Standard eligibility rules — decline, refer, and approve logic
+  # Priority range: 10-100
+  # Source: underwriting.pearl
+  #
+  # NOTE: no default approve rule — implicit pass-through if no decline/refer
+  #       fires and ELG-015 does not match. This is a known gap.
+  # TODO: add explicit default — this is a known gap (raised 2022-Q2, unresolved)
+  #
+  # Hard declines (PRIORITY 55-100): ELG-001 through ELG-006, ELG-012, ELG-013
+  # Refer rules (PRIORITY 50-80):    ELG-007 through ELG-011, ELG-014
+  # Approve rule (PRIORITY 10):      ELG-015 (AUS approve path only)
+  # Dead rule:                        ELG-013 (unreachable — see rule comment)
+  # ---------------------------------------------------------------------------
+  PHASE "EligibilityEvaluation"
+    INCLUDE underwriting.pearl
+    # Standard eligibility rules
+    # Priority range: 10-100
+    # NOTE: no default approve rule — implicit pass-through if no decline/refer fires
+    # TODO: add explicit default — this is a known gap
+  END
+
+  # ---------------------------------------------------------------------------
+  # PHASE 3: Pricing Calculation
+  # MI rate pricing — only meaningful if eligibility.result = approve
+  # Priority range: 40-50
+  # Source: pricing.pearl
+  #
+  # IMPORTANT: pricing does NOT run for refer or decline — each PRICE rule
+  #            checks eligibility.result = approve in its WHEN condition.
+  #            This is enforced by rule logic, not by the engine.
+  #
+  # Rate bands (descending LTV):
+  #   PRICE-001/002: LTV <= 85 (19-25 bps, FICO-tiered)
+  #   PRICE-003:     LTV 85-90 (38 bps, FICO >= 720)
+  #   PRICE-004:     LTV 90-95 (58 bps, FICO >= 720)
+  #   PRICE-005:     LTV 95-97 (87 bps, FICO >= 720)
+  #   PRICE-006:     LTV > 90, FICO 640-719 (110 bps)
+  #   PRICE-007:     Default fallback if no rate matched (135 bps)
+  # ---------------------------------------------------------------------------
+  PHASE "PricingCalculation"
+    INCLUDE pricing.pearl
+    # Only runs if eligibility.result = approve
+    # Priority range: 40-50
+    # IMPORTANT: pricing does NOT run for refer or decline
+  END
+
+  # ---------------------------------------------------------------------------
+  # PHASE 4: Documentation Requirements
+  # Collects required document codes into docs.requirements array
+  # Priority range: 20-30
+  # Source: docs_required.pearl
+  #
+  # Runs for all outcomes EXCEPT decline.
+  # Multiple DOC rules can fire for a single loan — all applicable docs collected.
+  # NOTE: "does NOT run for decline" is enforced by convention only.
+  #       The engine does not skip this phase for declines — downstream
+  #       systems are expected to ignore docs.requirements when result = decline.
+  #       TODO: add phase-level condition or engine guard for decline suppression
+  # ---------------------------------------------------------------------------
+  PHASE "DocumentationRequirements"
+    INCLUDE docs_required.pearl
+    # Runs for all outcomes (approve, refer)
+    # Does NOT run for decline
+    # Priority range: 20-30
+    # NOTE: enforcement of "not for decline" is by convention only — see above
+  END
+
+END

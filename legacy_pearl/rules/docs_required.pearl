@@ -1,0 +1,141 @@
+# =============================================================================
+# PEARL Rule File: docs_required.pearl
+# Description:    Documentation requirement rules for MI underwriting
+# Author:         Compliance / Operations
+# Created:        2020-11
+# Last Modified:  2022-09 (approx)
+# =============================================================================
+# Doc requirements — updated per compliance memo 2020-11
+# These rules append required document codes to docs.requirements array.
+# Multiple rules can fire for a single loan — all applicable docs are collected.
+#
+# NOTE: These rules run for approve and refer outcomes only.
+#       Decline cases do not require doc collection — see ruleflow.pearl.
+#
+# Doc codes reference:
+#   FTHB_CERT            — First-time homebuyer education certificate
+#   LEASE_AGREEMENT      — Executed lease agreement (investment properties)
+#   SECOND_HOME_CERT     — Borrower occupancy certification (second homes)
+#   CONDO_CERT           — Condo project approval/certification
+#   RENTAL_INCOME_ANALYSIS — Rental income worksheet (2-4 unit)
+#   APPRAISAL_REVIEW     — Independent appraisal review (high LTV)
+#   FULL_DOC_PACKAGE     — Complete documentation set (manual UW)
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# DOC-001 | First-Time Homebuyer Certificate
+# FTHB cert requirement added per state law changes (varies by state)
+# NOTE: requirement applies regardless of state — some states have additional
+#       requirements not captured here. TODO: add state-specific FTHB rules.
+# Added 2020-11 per compliance memo
+# -----------------------------------------------------------------------------
+RULE "DOC-001" PRIORITY 30 EFFECT info
+WHEN
+    borrower.firstTimeHomebuyer = true
+THEN
+    SET docs.requirements += "FTHB_CERT"
+    ACTION "First-time homebuyer certificate required"
+    FLAG "FTHB"
+END
+
+
+# -----------------------------------------------------------------------------
+# DOC-002 | Investment Property Lease Agreement
+# Lease agreement required to document rental income for investment properties
+# NOTE: if property is vacant, a signed lease or rental agreement is still
+#       required — borrower must provide executed or prospective lease
+# Added 2020-11 per compliance memo
+# -----------------------------------------------------------------------------
+RULE "DOC-002" PRIORITY 30 EFFECT info
+WHEN
+    loan.occupancy = investment
+THEN
+    SET docs.requirements += "LEASE_AGREEMENT"
+    ACTION "Lease agreement required for investment property"
+END
+
+
+# -----------------------------------------------------------------------------
+# DOC-003 | Second Home Occupancy Certification
+# Borrower must certify intent to occupy as second/vacation home
+# NOTE: this is a fraud prevention requirement — do not waive
+# Added 2020-11 per compliance memo
+# -----------------------------------------------------------------------------
+RULE "DOC-003" PRIORITY 30 EFFECT info
+WHEN
+    loan.occupancy = second
+THEN
+    SET docs.requirements += "SECOND_HOME_CERT"
+    ACTION "Second home occupancy certification required"
+END
+
+
+# -----------------------------------------------------------------------------
+# DOC-004 | Condo Project Certification
+# Condo projects must be reviewed and certified as warrantable
+# NOTE: condo project approval status is NOT in the current data model.
+#       This rule triggers the requirement — underwriter must verify manually.
+#       TODO: add condo.projectApprovalStatus field to data model
+# Added 2020-11 per compliance memo
+# -----------------------------------------------------------------------------
+RULE "DOC-004" PRIORITY 28 EFFECT info
+WHEN
+    property.type = condo
+THEN
+    SET docs.requirements += "CONDO_CERT"
+    ACTION "Condo project certification required"
+END
+
+
+# -----------------------------------------------------------------------------
+# DOC-005 | 2-4 Unit Rental Income Analysis
+# Multi-unit properties require rental income analysis worksheet
+# NOTE: rental income from non-occupied units may be used for qualifying —
+#       analysis must document market rents and vacancy assumptions
+# Added 2020-11 per compliance memo
+# -----------------------------------------------------------------------------
+RULE "DOC-005" PRIORITY 28 EFFECT info
+WHEN
+    property.type = 2to4
+THEN
+    SET docs.requirements += "RENTAL_INCOME_ANALYSIS"
+    ACTION "Rental income analysis required for 2-4 unit property"
+END
+
+
+# -----------------------------------------------------------------------------
+# DOC-006 | Independent Appraisal Review (High LTV)
+# Loans above 90% LTV require independent appraisal review
+# NOTE: this is in ADDITION to the standard appraisal — a second review
+#       by an independent appraiser or AMC is required
+# TODO: confirm whether this applies to all property types or SFH only
+#       Currently applies to all — may be overly broad for condos (see DOC-004)
+# Added 2021-03 per updated appraisal policy
+# -----------------------------------------------------------------------------
+RULE "DOC-006" PRIORITY 25 EFFECT info
+WHEN
+    loan.ltv > 90
+THEN
+    SET docs.requirements += "APPRAISAL_REVIEW"
+    ACTION "Independent appraisal review required above 90% LTV"
+END
+
+
+# -----------------------------------------------------------------------------
+# DOC-007 | Full Documentation Package (Manual Underwriting)
+# Manual underwriting cases require complete documentation package
+# Applies when AUS finding is du_refer or none (no AUS run)
+# NOTE: "full doc package" includes: 2 years tax returns, 2 months bank
+#       statements, 30 days paystubs, VOE, and any other docs per UW checklist
+#       This is a legacy catch-all — specific items should be enumerated
+#       TODO: break this into individual doc codes in next system update
+# Added 2020-11 per compliance memo
+# -----------------------------------------------------------------------------
+RULE "DOC-007" PRIORITY 20 EFFECT info
+WHEN
+    aus.finding IN (du_refer, none)
+THEN
+    SET docs.requirements += "FULL_DOC_PACKAGE"
+    ACTION "Full documentation package required for manual underwriting"
+END

@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-027",
+  "loan": {
+    "ltv": 92.0,
+    "dti": 38.0,
+    "loanAmount": 276000,
+    "productType": "fixed",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 720,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "condo",
+    "state": "TX",
+    "estimatedValue": 300000
+  },
+  "aus": {
+    "finding": "du_approve"
+  }
+}

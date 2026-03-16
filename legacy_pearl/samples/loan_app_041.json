@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-041",
+  "loan": {
+    "ltv": 80.0,
+    "dti": 32.0,
+    "loanAmount": 320000,
+    "productType": "fixed",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 760,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "sfh",
+    "state": "WI",
+    "estimatedValue": 400000
+  },
+  "aus": {
+    "finding": "du_approve"
+  }
+}

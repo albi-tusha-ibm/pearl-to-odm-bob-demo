@@ -1,0 +1,12 @@
+# LTV Threshold Reference Table — Conventional MI Program — For reference only; rules engine is authoritative,,,,,,,
+threshold_name,ltv_max,applies_to_occupancy,applies_to_property,applies_to_product,rule_reference,notes
+Standard Maximum LTV,97.00,primary,sfh|condo,fixed|arm,ELG-002,Maximum LTV for standard MI coverage
+ARM Product Maximum LTV,95.00,all,all,arm,ELG-006,ARM products capped at 95% LTV
+Investment Property Maximum LTV,85.00,investment,all,all,ELG-004,Investment properties limited to 85% LTV
+2-4 Unit Property Maximum LTV,80.00,all,2to4,all,ELG-005,Multi-unit properties limited to 80% LTV
+Second Home Maximum LTV,90.00,second,all,all,ELG-012,Second homes limited to 90% LTV
+Condo High-LTV Refer Threshold,90.00,all,condo,all,ELG-011,Condos above 90% LTV require manual review
+Appraisal Review Trigger,90.00,all,all,all,DOC-006,Independent appraisal review required above this LTV
+Exception: Low FICO Primary Refer,95.00,primary,all,all,EXC-001,FICO 620-639 on primary above 95% LTV triggers exception
+Exception: FTHB High-Risk Refer,95.00,primary,all,all,EXC-004,First-time buyer above 95% LTV with FICO < 660 triggers exception
+Exception: Elevated-State Condo Refer,85.00,all,condo,all,EXC-003,FL/HI/NV condos above 85% LTV trigger exception

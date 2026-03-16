@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-052",
+  "loan": {
+    "ltv": 94.0,
+    "dti": 35.0,
+    "loanAmount": 376000,
+    "productType": "fixed",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 700,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "sfh",
+    "state": "NY",
+    "estimatedValue": 400000
+  },
+  "aus": {
+    "finding": "lp_accept"
+  }
+}

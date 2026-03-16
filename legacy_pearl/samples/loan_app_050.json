@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-050",
+  "loan": {
+    "ltv": 97.0,
+    "dti": 35.0,
+    "loanAmount": 485000,
+    "productType": "fixed",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 720,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "sfh",
+    "state": "CA",
+    "estimatedValue": 500000
+  },
+  "aus": {
+    "finding": "lp_accept"
+  }
+}

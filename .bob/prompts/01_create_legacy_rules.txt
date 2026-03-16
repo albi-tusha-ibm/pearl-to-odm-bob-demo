@@ -1,0 +1,48 @@
+PROMPT: Create Legacy PEARL-DSL Rules for MGIC Mortgage Insurance Underwriting
+
+Generate a synthetic legacy rule system in PEARL-DSL format that represents a realistic but intentionally flawed mortgage insurance underwriting system.
+
+REQUIREMENTS:
+- Create 30-35 rules across 4 categories:
+  * Eligibility rules (LTV, DTI, FICO thresholds)
+  * Pricing rules (rate adjustments based on risk factors)
+  * Documentation requirements (income verification, appraisal types)
+  * Exception handling (manual review triggers)
+
+- Domain: Mortgage insurance underwriting with these key factors:
+  * Loan-to-Value (LTV) ratio: 75-98%
+  * Debt-to-Income (DTI) ratio: 28-55%
+  * FICO credit scores: 580-780
+  * Occupancy types: Primary, Secondary, Investment
+  * Property types: SFR, Condo, Townhouse, Multi-unit
+  * AUS findings: Accept, Approve/Eligible, Refer, Caution
+  * States: CA, TX, FL, NY, IL (with state-specific rules)
+
+- Intentional imperfections to demonstrate modernization value:
+  * 3-4 duplicate rules with slightly different names
+  * 2-3 "dead" rules that are never triggered
+  * Inconsistent naming conventions (camelCase, snake_case, abbreviations)
+  * Mix of inline logic and table lookups
+  * Some rules with overlapping conditions
+
+OUTPUT STRUCTURE:
+- 5 .pearl files:
+  1. underwriting.pearl (eligibility rules)
+  2. pricing.pearl (rate adjustment rules)
+  3. docs_required.pearl (documentation rules)
+  4. exceptions.pearl (manual review triggers)
+  5. ruleflow.pearl (execution order)
+
+- 2 CSV lookup tables:
+  1. pricing_matrix.csv (base rates by LTV/FICO bands)
+  2. ltv_thresholds.csv (max LTV by property type/occupancy)
+
+PEARL-DSL SYNTAX:
+Use simple, readable syntax:
+- RULE <name>
+- WHEN <conditions>
+- THEN <actions>
+- PRIORITY <number>
+- Comments with #
+
+Make the rules realistic enough to demonstrate business logic complexity but simple enough to understand quickly.

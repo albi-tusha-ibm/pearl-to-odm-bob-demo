@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-034",
+  "loan": {
+    "ltv": 93.0,
+    "dti": 44.0,
+    "loanAmount": 372000,
+    "productType": "arm",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 720,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "sfh",
+    "state": "CA",
+    "estimatedValue": 400000
+  },
+  "aus": {
+    "finding": "lp_accept"
+  }
+}

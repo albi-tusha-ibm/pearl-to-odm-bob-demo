@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-024",
+  "loan": {
+    "ltv": 80.0,
+    "dti": 38.0,
+    "loanAmount": 320000,
+    "productType": "arm",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 700,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "sfh",
+    "state": "NY",
+    "estimatedValue": 400000
+  },
+  "aus": {
+    "finding": "none"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-009",
+  "loan": {
+    "ltv": 82.0,
+    "dti": 38.0,
+    "loanAmount": 328000,
+    "productType": "fixed",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 720,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "2to4",
+    "state": "NY",
+    "estimatedValue": 400000
+  },
+  "aus": {
+    "finding": "du_approve"
+  }
+}

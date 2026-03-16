@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-058",
+  "loan": {
+    "ltv": 90.0,
+    "dti": 32.0,
+    "loanAmount": 450000,
+    "productType": "fixed",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 760,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "sfh",
+    "state": "IL",
+    "estimatedValue": 500000
+  },
+  "aus": {
+    "finding": "du_approve"
+  }
+}

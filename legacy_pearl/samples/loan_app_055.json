@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-055",
+  "loan": {
+    "ltv": 80.0,
+    "dti": 32.0,
+    "loanAmount": 400000,
+    "productType": "fixed",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 760,
+    "firstTimeHomebuyer": true
+  },
+  "property": {
+    "type": "sfh",
+    "state": "TX",
+    "estimatedValue": 500000
+  },
+  "aus": {
+    "finding": "du_approve"
+  }
+}

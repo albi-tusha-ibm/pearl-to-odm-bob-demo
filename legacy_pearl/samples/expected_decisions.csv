@@ -1,0 +1,61 @@
+file,eligibility.result,reason,miRateBps,flags,requiredDocs
+loan_app_001.json,decline,Credit score below minimum threshold,,,
+loan_app_002.json,decline,Credit score below minimum threshold,,,
+loan_app_003.json,decline,LTV exceeds maximum allowable 97%,,,
+loan_app_004.json,decline,LTV exceeds maximum allowable 97%,,,
+loan_app_005.json,decline,DTI exceeds maximum 50%,,,
+loan_app_006.json,decline,DTI exceeds maximum 50%,,,
+loan_app_007.json,decline,Investment property LTV exceeds 85%,,,
+loan_app_008.json,decline,Investment property LTV exceeds 85%,,,
+loan_app_009.json,decline,2-4 unit property LTV exceeds 80%,,,
+loan_app_010.json,decline,2-4 unit property LTV exceeds 80%,,,
+loan_app_011.json,decline,ARM products not eligible above 95% LTV,,,
+loan_app_012.json,decline,ARM products not eligible above 95% LTV,,,
+loan_app_013.json,decline,Second home LTV exceeds 90% maximum,,,
+loan_app_014.json,decline,Second home LTV exceeds 90% maximum,,,
+loan_app_015.json,decline,Credit score below minimum threshold,,,
+loan_app_016.json,decline,Credit score below minimum threshold,,,
+loan_app_017.json,decline,DTI exceeds maximum 50%,,,
+loan_app_018.json,decline,Investment property LTV exceeds 85%,,,
+loan_app_019.json,refer,Low credit score with high LTV requires manual review,,,APPRAISAL_REVIEW
+loan_app_020.json,refer,Low credit score with high LTV requires manual review,,,APPRAISAL_REVIEW
+loan_app_021.json,refer,DU Refer requires manual underwriting review,,,FULL_DOC_PACKAGE
+loan_app_022.json,refer,DU Refer requires manual underwriting review,,,CONDO_CERT|FULL_DOC_PACKAGE
+loan_app_023.json,refer,No AUS finding — manual underwriting required,,,FULL_DOC_PACKAGE
+loan_app_024.json,refer,No AUS finding — manual underwriting required,,,FULL_DOC_PACKAGE
+loan_app_025.json,refer,High DTI with marginal credit requires review,,,
+loan_app_026.json,refer,High DTI with marginal credit requires review,,,
+loan_app_027.json,refer,Condo above 90% LTV requires additional review,,,CONDO_CERT|APPRAISAL_REVIEW
+loan_app_028.json,refer,Condo above 90% LTV requires additional review,,,CONDO_CERT|APPRAISAL_REVIEW
+loan_app_029.json,refer,DU Refer requires manual underwriting review,,,FULL_DOC_PACKAGE
+loan_app_030.json,refer,No AUS finding — manual underwriting required,,,FULL_DOC_PACKAGE
+loan_app_031.json,refer,High-risk combination: low FICO + high LTV on primary — escalate to senior underwriter,,MANUAL_UW_REQUIRED|HIGH_RISK_COMBO,APPRAISAL_REVIEW
+loan_app_032.json,refer,High-risk combination: low FICO + high LTV on primary — escalate to senior underwriter,,MANUAL_UW_REQUIRED|HIGH_RISK_COMBO,APPRAISAL_REVIEW
+loan_app_033.json,refer,ARM with high LTV and DTI — manual review required,,MANUAL_UW_REQUIRED,APPRAISAL_REVIEW
+loan_app_034.json,refer,ARM with high LTV and DTI — manual review required,,MANUAL_UW_REQUIRED,APPRAISAL_REVIEW
+loan_app_035.json,refer,Condo in elevated-risk state above 85% LTV — manual review,,STATE_RISK_OVERRIDE,CONDO_CERT
+loan_app_036.json,refer,Condo in elevated-risk state above 85% LTV — manual review,,STATE_RISK_OVERRIDE,CONDO_CERT
+loan_app_037.json,refer,First-time buyer with high LTV and marginal credit — manual review,,FTHB_HIGH_RISK|FTHB,FTHB_CERT|APPRAISAL_REVIEW
+loan_app_038.json,refer,First-time buyer with high LTV and marginal credit — manual review,,FTHB_HIGH_RISK|FTHB,FTHB_CERT|APPRAISAL_REVIEW
+loan_app_039.json,refer,DU Refer requires manual underwriting review,,,FULL_DOC_PACKAGE
+loan_app_040.json,refer,No AUS finding — manual underwriting required,,,FULL_DOC_PACKAGE
+loan_app_041.json,approve,AUS approved — meets standard eligibility criteria,19,,
+loan_app_042.json,approve,AUS approved — meets standard eligibility criteria,19,,
+loan_app_043.json,approve,AUS approved — meets standard eligibility criteria,25,,
+loan_app_044.json,approve,AUS approved — meets standard eligibility criteria,25,,
+loan_app_045.json,approve,AUS approved — meets standard eligibility criteria,38,,
+loan_app_046.json,approve,AUS approved — meets standard eligibility criteria,38,,
+loan_app_047.json,approve,AUS approved — meets standard eligibility criteria,58,,APPRAISAL_REVIEW
+loan_app_048.json,approve,AUS approved — meets standard eligibility criteria,58,,APPRAISAL_REVIEW
+loan_app_049.json,approve,AUS approved — meets standard eligibility criteria,87,,APPRAISAL_REVIEW
+loan_app_050.json,approve,AUS approved — meets standard eligibility criteria,87,,APPRAISAL_REVIEW
+loan_app_051.json,approve,AUS approved — meets standard eligibility criteria,110,,APPRAISAL_REVIEW
+loan_app_052.json,approve,AUS approved — meets standard eligibility criteria,110,,APPRAISAL_REVIEW
+loan_app_053.json,approve,AUS approved — meets standard eligibility criteria,135,PRICING_DEFAULT_APPLIED,
+loan_app_054.json,approve,AUS approved — meets standard eligibility criteria,135,PRICING_DEFAULT_APPLIED,
+loan_app_055.json,approve,AUS approved — meets standard eligibility criteria,19,FTHB,FTHB_CERT
+loan_app_056.json,approve,AUS approved — meets standard eligibility criteria,38,FTHB,FTHB_CERT
+loan_app_057.json,approve,AUS approved — meets standard eligibility criteria,25,,
+loan_app_058.json,approve,AUS approved — meets standard eligibility criteria,38,,
+loan_app_059.json,approve,AUS approved — meets standard eligibility criteria,135,PRICING_DEFAULT_APPLIED,
+loan_app_060.json,approve,AUS approved — meets standard eligibility criteria,135,PRICING_DEFAULT_APPLIED,

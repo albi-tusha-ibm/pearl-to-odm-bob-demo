@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-048",
+  "loan": {
+    "ltv": 94.0,
+    "dti": 35.0,
+    "loanAmount": 470000,
+    "productType": "fixed",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 740,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "sfh",
+    "state": "IL",
+    "estimatedValue": 500000
+  },
+  "aus": {
+    "finding": "lp_accept"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-020",
+  "loan": {
+    "ltv": 95.0,
+    "dti": 40.0,
+    "loanAmount": 285000,
+    "productType": "fixed",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 635,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "sfh",
+    "state": "IL",
+    "estimatedValue": 300000
+  },
+  "aus": {
+    "finding": "du_approve"
+  }
+}

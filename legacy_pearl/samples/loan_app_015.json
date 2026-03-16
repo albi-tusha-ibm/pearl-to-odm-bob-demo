@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-015",
+  "loan": {
+    "ltv": 85.0,
+    "dti": 38.0,
+    "loanAmount": 210000,
+    "productType": "fixed",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 600,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "sfh",
+    "state": "GA",
+    "estimatedValue": 247000
+  },
+  "aus": {
+    "finding": "du_approve"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "loanId": "LOAN-011",
+  "loan": {
+    "ltv": 96.0,
+    "dti": 38.0,
+    "loanAmount": 240000,
+    "productType": "arm",
+    "occupancy": "primary"
+  },
+  "borrower": {
+    "creditScore": 700,
+    "firstTimeHomebuyer": false
+  },
+  "property": {
+    "type": "sfh",
+    "state": "TX",
+    "estimatedValue": 250000
+  },
+  "aus": {
+    "finding": "du_approve"
+  }
+}
