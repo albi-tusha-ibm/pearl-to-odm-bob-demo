@@ -56,18 +56,23 @@ export class DecisionSimulator {
                 return decision;
             }
 
-            // 3. If no decline, set to approve
+            // 3. Refer Rules (Priority 60-40) - Check for manual review conditions
+            if (!decision.eligibility.result) {
+                this.executeReferRules(loanData, decision);
+            }
+
+            // 4. If no decline or refer, set to approve
             if (!decision.eligibility.result) {
                 decision.eligibility.result = 'approve';
                 decision.eligibility.reason = 'All eligibility criteria met';
             }
 
-            // 4. Pricing Rules (only if approved)
+            // 5. Pricing Rules (only if approved)
             if (decision.eligibility.result === 'approve') {
                 this.executePricingRules(loanData, decision);
             }
 
-            // 5. Documentation Rules
+            // 6. Documentation Rules
             this.executeDocumentationRules(loanData, decision);
 
         } catch (error) {
@@ -258,6 +263,102 @@ export class DecisionSimulator {
             return;
         }
     }
+    /**
+     * Execute refer rules (Priority 60-40)
+     * These rules identify cases requiring manual review
+     */
+    executeReferRules(loanData, decision) {
+        const borrower = loanData.borrower || {};
+        const loan = loanData.loan || {};
+        const property = loanData.property || {};
+        const aus = loanData.aus || {};
+
+        // REF-001: Low credit score with high LTV (Priority 60)
+        if (borrower.creditScore >= 620 && borrower.creditScore < 680 && loan.ltv > 90) {
+            this.fireRule('REF-001', 'Low Credit Score with High LTV - Manual Review', 60);
+            decision.eligibility.result = 'refer';
+            decision.eligibility.reason = 'Low credit score with high LTV requires manual review';
+            decision.eligibility.flags.push('MANUAL_REVIEW');
+            return;
+        }
+
+        // REF-002: DU Refer finding (Priority 58)
+        if (aus.finding === 'du_refer' || aus.finding === 'refer') {
+            this.fireRule('REF-002', 'DU Refer - Manual Underwriting', 58);
+            decision.eligibility.result = 'refer';
+            decision.eligibility.reason = 'DU Refer requires manual underwriting review';
+            decision.eligibility.flags.push('MANUAL_REVIEW');
+            return;
+        }
+
+        // REF-003: No AUS finding (Priority 57)
+        if (!aus.finding || aus.finding === 'manual' || aus.finding === 'none') {
+            this.fireRule('REF-003', 'No AUS Finding - Manual Underwriting', 57);
+            decision.eligibility.result = 'refer';
+            decision.eligibility.reason = 'No AUS finding — manual underwriting required';
+            decision.eligibility.flags.push('MANUAL_REVIEW');
+            return;
+        }
+
+        // REF-004: High DTI with marginal credit (Priority 56)
+        if (loan.dti > 43 && borrower.creditScore >= 620 && borrower.creditScore < 700) {
+            this.fireRule('REF-004', 'High DTI with Marginal Credit', 56);
+            decision.eligibility.result = 'refer';
+            decision.eligibility.reason = 'High DTI with marginal credit requires review';
+            decision.eligibility.flags.push('MANUAL_REVIEW');
+            return;
+        }
+
+        // REF-005: Condo at or above 90% LTV (Priority 55)
+        if (property.type === 'condo' && loan.ltv >= 90) {
+            this.fireRule('REF-005', 'Condo High LTV Review', 55);
+            decision.eligibility.result = 'refer';
+            decision.eligibility.reason = 'Condo above 90% LTV requires additional review';
+            decision.eligibility.flags.push('MANUAL_REVIEW');
+            return;
+        }
+
+        // REF-006: High-risk combination - low FICO + high LTV on primary (Priority 54)
+        if (borrower.creditScore >= 620 && borrower.creditScore < 680 &&
+            loan.ltv > 95 && loan.occupancy === 'primary') {
+            this.fireRule('REF-006', 'High-Risk Combination Review', 54);
+            decision.eligibility.result = 'refer';
+            decision.eligibility.reason = 'High-risk combination: low FICO + high LTV on primary — escalate to senior underwriter';
+            decision.eligibility.flags.push('MANUAL_REVIEW', 'HIGH_RISK');
+            return;
+        }
+
+        // REF-007: ARM with high LTV and DTI (Priority 53)
+        if (loan.productType === 'arm' && loan.ltv > 90 && loan.dti > 43) {
+            this.fireRule('REF-007', 'ARM High Risk Review', 53);
+            decision.eligibility.result = 'refer';
+            decision.eligibility.reason = 'ARM with high LTV and DTI — manual review required';
+            decision.eligibility.flags.push('MANUAL_REVIEW');
+            return;
+        }
+
+        // REF-008: Condo in elevated-risk state above 85% LTV (Priority 52)
+        const elevatedRiskStates = ['FL', 'NV', 'AZ', 'CA'];
+        if (property.type === 'condo' && loan.ltv > 85 &&
+            elevatedRiskStates.includes(property.state)) {
+            this.fireRule('REF-008', 'Condo State Risk Review', 52);
+            decision.eligibility.result = 'refer';
+            decision.eligibility.reason = 'Condo in elevated-risk state above 85% LTV — manual review';
+            decision.eligibility.flags.push('MANUAL_REVIEW', 'STATE_RISK');
+            return;
+        }
+
+        // REF-009: First-time buyer with high LTV and marginal credit (Priority 51)
+        if (borrower.firstTimeHomebuyer === true && loan.ltv > 95 &&
+            borrower.creditScore >= 620 && borrower.creditScore < 700) {
+            this.fireRule('REF-009', 'First-Time Buyer High Risk Review', 51);
+            decision.eligibility.result = 'refer';
+            decision.eligibility.reason = 'First-time buyer with high LTV and marginal credit — manual review';
+            decision.eligibility.flags.push('MANUAL_REVIEW', 'FTHB_RISK');
+            return;
+        }
+    }
+
 
     /**
      * Execute pricing rules (Priority 100)
@@ -267,69 +368,54 @@ export class DecisionSimulator {
         const loan = loanData.loan || {};
         const property = loanData.property || {};
 
-        // Base rate calculation using simplified pricing matrix
-        let miRate = 0;
+        // Base rate calculation using actual pricing matrix
+        let miRate = 135; // Default rate if no match found
+        const ltv = loan.ltv;
+        const fico = borrower.creditScore;
 
-        // Determine base rate by LTV and credit score
-        if (loan.ltv <= 80) {
-            miRate = borrower.creditScore >= 740 ? 25 : 35;
-        } else if (loan.ltv <= 85) {
-            miRate = borrower.creditScore >= 740 ? 45 : 60;
-        } else if (loan.ltv <= 90) {
-            miRate = borrower.creditScore >= 740 ? 70 : 90;
-        } else if (loan.ltv <= 95) {
-            miRate = borrower.creditScore >= 740 ? 95 : 120;
-        } else {
-            miRate = borrower.creditScore >= 740 ? 120 : 150;
+        // Determine base rate by LTV and credit score bands matching pricing_matrix.csv
+        // LTV bands: 80-85 is inclusive on both ends, higher bands start AFTER the boundary
+        if (ltv < 80) {
+            // LTV below 80% - use 80-85 band rates
+            if (fico > 760) miRate = 19;
+            else if (fico >= 720) miRate = 25;
+            else if (fico >= 680) miRate = 30;
+            else if (fico >= 640) miRate = 38;
+            else if (fico >= 620) miRate = 52;
+            else miRate = 135;
+        } else if (ltv >= 80 && ltv <= 85) {
+            if (fico > 760) miRate = 19;
+            else if (fico >= 720) miRate = 25;
+            else if (fico >= 680) miRate = 30;
+            else if (fico >= 640) miRate = 38;
+            else if (fico >= 620) miRate = 52;
+            else miRate = 135;
+        } else if (ltv > 85 && ltv <= 90) {
+            if (fico > 760) miRate = 32;
+            else if (fico >= 720) miRate = 38;
+            else if (fico >= 680) miRate = 52;
+            else if (fico >= 640) miRate = 65;
+            else if (fico >= 620) miRate = 82;
+            else miRate = 135;
+        } else if (ltv > 90 && ltv <= 95) {
+            if (fico > 760) miRate = 48;
+            else if (fico >= 720) miRate = 58;
+            else if (fico >= 680) miRate = 87;
+            else if (fico >= 640) miRate = 110;
+            else if (fico >= 620) miRate = 135;
+            else miRate = 195;
+        } else if (ltv > 95 && ltv <= 97) {
+            if (fico > 760) miRate = 72;
+            else if (fico >= 720) miRate = 87;
+            else if (fico >= 680) miRate = 135;
+            else if (fico >= 640) miRate = 162;
+            else if (fico >= 620) miRate = 195;
+            else miRate = 195;
         }
 
         this.fireRule('PRICE-BASE', 'Base MI Rate Calculation', 100);
 
-        // Adjustments
-        
-        // PRICE-001: Investment property adjustment
-        if (loan.occupancy === 'investment') {
-            miRate += 50;
-            this.fireRule('PRICE-001', 'Investment Property Adjustment', 95);
-        }
-
-        // PRICE-002: ARM product adjustment
-        if (loan.productType === 'arm') {
-            miRate += 15;
-            this.fireRule('PRICE-002', 'ARM Product Adjustment', 90);
-        }
-
-        // PRICE-003: Condo adjustment
-        if (property.type === 'condo') {
-            miRate += 10;
-            this.fireRule('PRICE-003', 'Condo Adjustment', 85);
-        }
-
-        // PRICE-004: Cash-out refinance adjustment
-        if (loan.purpose === 'cashout') {
-            miRate += 25;
-            this.fireRule('PRICE-004', 'Cash-Out Refinance Adjustment', 80);
-        }
-
-        // PRICE-005: First-time homebuyer discount
-        if (borrower.firstTimeHomebuyer === true && loan.ltv <= 95) {
-            miRate -= 10;
-            this.fireRule('PRICE-005', 'First-Time Homebuyer Discount', 75);
-        }
-
-        // PRICE-006: High balance loan adjustment
-        if (loan.loanAmount > 647200) {
-            miRate += 20;
-            this.fireRule('PRICE-006', 'High Balance Loan Adjustment', 70);
-        }
-
-        // PRICE-007: Manufactured home adjustment
-        if (property.type === 'manufactured') {
-            miRate += 30;
-            this.fireRule('PRICE-007', 'Manufactured Home Adjustment', 65);
-        }
-
-        decision.pricing.miRateBps = Math.max(miRate, 0); // Ensure non-negative
+        decision.pricing.miRateBps = miRate;
     }
 
     /**

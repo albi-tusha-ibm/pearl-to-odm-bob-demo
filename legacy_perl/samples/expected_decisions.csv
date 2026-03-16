@@ -39,7 +39,7 @@ loan_app_037.json,refer,First-time buyer with high LTV and marginal credit — m
 loan_app_038.json,refer,First-time buyer with high LTV and marginal credit — manual review,,FTHB_HIGH_RISK|FTHB,FTHB_CERT|APPRAISAL_REVIEW
 loan_app_039.json,refer,DU Refer requires manual underwriting review,,,FULL_DOC_PACKAGE
 loan_app_040.json,refer,No AUS finding — manual underwriting required,,,FULL_DOC_PACKAGE
-loan_app_041.json,approve,AUS approved — meets standard eligibility criteria,19,,
+loan_app_041.json,approve,AUS approved — meets standard eligibility criteria,25,,
 loan_app_042.json,approve,AUS approved — meets standard eligibility criteria,19,,
 loan_app_043.json,approve,AUS approved — meets standard eligibility criteria,25,,
 loan_app_044.json,approve,AUS approved — meets standard eligibility criteria,25,,
@@ -49,13 +49,13 @@ loan_app_047.json,approve,AUS approved — meets standard eligibility criteria,5
 loan_app_048.json,approve,AUS approved — meets standard eligibility criteria,58,,APPRAISAL_REVIEW
 loan_app_049.json,approve,AUS approved — meets standard eligibility criteria,87,,APPRAISAL_REVIEW
 loan_app_050.json,approve,AUS approved — meets standard eligibility criteria,87,,APPRAISAL_REVIEW
-loan_app_051.json,approve,AUS approved — meets standard eligibility criteria,110,,APPRAISAL_REVIEW
-loan_app_052.json,approve,AUS approved — meets standard eligibility criteria,110,,APPRAISAL_REVIEW
-loan_app_053.json,approve,AUS approved — meets standard eligibility criteria,135,PRICING_DEFAULT_APPLIED,
-loan_app_054.json,approve,AUS approved — meets standard eligibility criteria,135,PRICING_DEFAULT_APPLIED,
-loan_app_055.json,approve,AUS approved — meets standard eligibility criteria,19,FTHB,FTHB_CERT
+loan_app_051.json,approve,AUS approved — meets standard eligibility criteria,87,,APPRAISAL_REVIEW
+loan_app_052.json,approve,AUS approved — meets standard eligibility criteria,87,,APPRAISAL_REVIEW
+loan_app_053.json,approve,AUS approved — meets standard eligibility criteria,38,,
+loan_app_054.json,approve,AUS approved — meets standard eligibility criteria,38,,
+loan_app_055.json,approve,AUS approved — meets standard eligibility criteria,25,FTHB,FTHB_CERT
 loan_app_056.json,approve,AUS approved — meets standard eligibility criteria,38,FTHB,FTHB_CERT
 loan_app_057.json,approve,AUS approved — meets standard eligibility criteria,25,,
 loan_app_058.json,approve,AUS approved — meets standard eligibility criteria,38,,
-loan_app_059.json,approve,AUS approved — meets standard eligibility criteria,135,PRICING_DEFAULT_APPLIED,
-loan_app_060.json,approve,AUS approved — meets standard eligibility criteria,135,PRICING_DEFAULT_APPLIED,
+loan_app_059.json,approve,AUS approved — meets standard eligibility criteria,30,,
+loan_app_060.json,approve,AUS approved — meets standard eligibility criteria,30,,
