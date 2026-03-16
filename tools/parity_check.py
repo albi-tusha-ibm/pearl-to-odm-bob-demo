@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-MGIC Pearl Modernization - Parity Validation Script
+Pearl Modernization - Parity Validation Script
 
 This script compares legacy PEARL-DSL expected decisions against ODM actual decisions
 and produces a detailed parity report.
@@ -293,7 +293,7 @@ class ParityChecker:
             Exit code (0 for success, 1 for failure)
         """
         print("=" * 60)
-        print("MGIC Pearl Modernization - Parity Validation")
+        print("Pearl Modernization - Parity Validation")
         print("=" * 60)
         print()
         

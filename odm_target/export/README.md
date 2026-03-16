@@ -860,7 +860,7 @@ pearl-to-odm-bob-demo/odm_target/design/governance_and_release.md
 ### Support
 - IBM Support Portal: https://www.ibm.com/mysupport
 - ODM Community Forum: https://community.ibm.com/community/user/automation/communities/community-home?CommunityKey=c0005a22-520b-4181-bfad-feffd8bdc022
-- Internal MGIC ODM Support: odm-support@mgic.com
+- Internal ODM Support: Contact your organization's ODM support team
 
 ### Related Documentation in This Repository
 - `design/decision_service_arch.md` - Architecture overview

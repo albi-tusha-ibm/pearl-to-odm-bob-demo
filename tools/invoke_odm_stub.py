@@ -22,7 +22,7 @@
 # ============================================================================
 
 """
-MGIC Pearl Modernization - ODM REST API Invocation Demo
+Pearl Modernization - ODM REST API Invocation Demo
 
 This script demonstrates how to call the IBM ODM Decision Service REST endpoint
 with sample loan data. This is a STUB implementation that shows the request/response
