@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=web_dashboard/">
+    <title>Redirecting to Dashboard...</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .redirect-message {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            margin: 1rem auto;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #0f62fe;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        a {
+            color: #0f62fe;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="redirect-message">
+        <h1>🔄 Perl-to-ODM Migration Dashboard</h1>
+        <div class="spinner"></div>
+        <p>Redirecting to dashboard...</p>
+        <p><small>If you are not redirected automatically, <a href="web_dashboard/">click here</a>.</small></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive dashboard for Perl-to-ODM migration demonstration">
+    <title>Perl-to-ODM Migration Dashboard</title>
+    
+    <!-- Syntax Highlighting - Prism.js -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Loading Indicator -->
+    <div id="loading-indicator" class="loading-indicator">
+        <div class="spinner"></div>
+        <p>Loading dashboard...</p>
+    </div>
+
+    <!-- Main Container -->
+    <div id="app" class="app-container" style="display: none;">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">
+                    <span class="logo-icon">🔄</span>
+                    Perl-to-ODM Migration Dashboard
+                </h1>
+                <p class="app-subtitle">Interactive Demo & Parity Analysis</p>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="tab-navigation" role="tablist">
+            <button 
+                class="tab-button active" 
+                data-tab="rule-viewer" 
+                role="tab" 
+                aria-selected="true"
+                aria-controls="rule-viewer-panel">
+                📋 Rule Comparison
+            </button>
+            <button 
+                class="tab-button" 
+                data-tab="test-explorer" 
+                role="tab" 
+                aria-selected="false"
+                aria-controls="test-explorer-panel">
+                🧪 Test Cases
+            </button>
+            <button 
+                class="tab-button" 
+                data-tab="decision-engine" 
+                role="tab" 
+                aria-selected="false"
+                aria-controls="decision-engine-panel">
+                ⚙️ Decision Engine
+            </button>
+            <button 
+                class="tab-button" 
+                data-tab="parity-report" 
+                role="tab" 
+                aria-selected="false"
+                aria-controls="parity-report-panel">
+                📊 Parity Report
+            </button>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Rule Viewer Panel -->
+            <section 
+                id="rule-viewer-panel" 
+                class="content-panel active" 
+                role="tabpanel"
+                aria-labelledby="rule-viewer-tab">
+                <div class="panel-header">
+                    <h2>Side-by-Side Rule Comparison</h2>
+                    <p class="panel-description">Compare legacy Perl rules with ODM design documentation</p>
+                </div>
+                <div id="rule-viewer-content" class="panel-content">
+                    <!-- Content will be dynamically loaded -->
+                    <div class="placeholder-message">
+                        <p>Select a rule file to view comparison</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Test Explorer Panel -->
+            <section 
+                id="test-explorer-panel" 
+                class="content-panel" 
+                role="tabpanel"
+                aria-labelledby="test-explorer-tab"
+                hidden>
+                <div class="panel-header">
+                    <h2>Test Case Explorer</h2>
+                    <p class="panel-description">Browse and analyze 60 loan application test cases</p>
+                </div>
+                <div id="test-explorer-content" class="panel-content">
+                    <div class="placeholder-message">
+                        <p>Loading test cases...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Decision Engine Panel -->
+            <section 
+                id="decision-engine-panel" 
+                class="content-panel" 
+                role="tabpanel"
+                aria-labelledby="decision-engine-tab"
+                hidden>
+                <div class="panel-header">
+                    <h2>Simulated ODM Decision Engine</h2>
+                    <p class="panel-description">Execute decision logic and compare with expected results</p>
+                </div>
+                <div id="decision-engine-content" class="panel-content">
+                    <div class="placeholder-message">
+                        <p>Select a test case to run decision simulation</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Parity Report Panel -->
+            <section 
+                id="parity-report-panel" 
+                class="content-panel" 
+                role="tabpanel"
+                aria-labelledby="parity-report-tab"
+                hidden>
+                <div class="panel-header">
+                    <h2>Parity Analysis Report</h2>
+                    <p class="panel-description">Visual metrics showing migration accuracy and coverage</p>
+                </div>
+                <div id="parity-report-content" class="panel-content">
+                    <div class="placeholder-message">
+                        <p>Generating parity metrics...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Perl-to-ODM Migration Demo | Built with Vanilla JavaScript & Web Components</p>
+        </footer>
+    </div>
+
+    <!-- Error Display -->
+    <div id="error-display" class="error-display" style="display: none;">
+        <div class="error-content">
+            <h2>⚠️ Error</h2>
+            <p id="error-message"></p>
+            <button id="error-dismiss" class="btn-primary">Dismiss</button>
+        </div>
+    </div>
+
+    <!-- External Dependencies -->
+    <!-- Syntax Highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-perl.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
+    
+    <!-- Data Visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <!-- Application Entry Point -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>

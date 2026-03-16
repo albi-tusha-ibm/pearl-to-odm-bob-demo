@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Dashboard Loading</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .status { padding: 1rem; margin: 1rem 0; border-radius: 4px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+    </style>
+</head>
+<body>
+    <h1>Dashboard Loading Test</h1>
+    <div id="status"></div>
+    <div id="details"></div>
+
+    <script type="module">
+        const status = document.getElementById('status');
+        const details = document.getElementById('details');
+
+        function log(message, type = 'info') {
+            const div = document.createElement('div');
+            div.className = `status ${type}`;
+            div.textContent = message;
+            details.appendChild(div);
+            console.log(message);
+        }
+
+        async function test() {
+            try {
+                log('Starting test...', 'info');
+                
+                // Test 1: Load DataLoader
+                log('Loading DataLoader...', 'info');
+                const { DataLoader } = await import('./services/DataLoader.js');
+                log('✓ DataLoader loaded', 'success');
+                
+                // Test 2: Create DataLoader instance
+                log('Creating DataLoader instance...', 'info');
+                const dataLoader = new DataLoader();
+                log('✓ DataLoader instance created', 'success');
+                
+                // Test 3: Load rules
+                log('Loading rules (this might take a moment)...', 'info');
+                const rules = await dataLoader.loadRules();
+                log(`✓ Loaded ${rules.length} rule files`, 'success');
+                
+                // Test 4: Load BaseComponent
+                log('Loading BaseComponent...', 'info');
+                const { BaseComponent } = await import('./components/BaseComponent.js');
+                log('✓ BaseComponent loaded', 'success');
+                
+                // Test 5: Load RuleParser
+                log('Loading RuleParser...', 'info');
+                const { RuleParser } = await import('./utils/RuleParser.js');
+                log('✓ RuleParser loaded', 'success');
+                
+                // Test 6: Parse a rule
+                if (rules.length > 0 && rules[0].loaded) {
+                    log('Parsing first rule...', 'info');
+                    const parsed = RuleParser.parseRuleFile(rules[0].content);
+                    log(`✓ Parsed ${parsed.rules.length} rules from ${rules[0].filename}`, 'success');
+                }
+                
+                log('=== ALL TESTS PASSED ===', 'success');
+                status.innerHTML = '<div class="status success"><strong>✓ All components load successfully!</strong><br>The issue is likely in the RuleViewer component initialization.</div>';
+                
+            } catch (error) {
+                log(`✗ Error: ${error.message}`, 'error');
+                log(`Stack: ${error.stack}`, 'error');
+                status.innerHTML = `<div class="status error"><strong>✗ Test failed:</strong><br>${error.message}</div>`;
+            }
+        }
+
+        test();
+    </script>
+</body>
+</html>

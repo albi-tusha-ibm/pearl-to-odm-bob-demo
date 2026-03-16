@@ -15,12 +15,39 @@
 
 Before exploring this demo, ensure you have:
 
-- **Python 3.8+** installed
+- **Python 3.8+** or **Node.js** installed (for running the web dashboard)
+- A modern web browser (Chrome, Firefox, Safari, or Edge)
 - A text editor or IDE (VS Code recommended)
 - Basic understanding of business rules and decision management
 - (Optional) IBM ODM 8.11+ for actual deployment
 
-### Getting Started in 5 Minutes
+### Option 1: Interactive Web Dashboard (Recommended)
+
+**Experience the migration interactively with our new web dashboard!**
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd perl-to-odm-bob-demo
+   ```
+
+2. **Launch the dashboard:**
+   ```bash
+   # On macOS/Linux:
+   ./start_dashboard.sh
+   
+   # On Windows:
+   start_dashboard.bat
+   ```
+
+3. **Open your browser:**
+   Navigate to `http://localhost:8000` and explore:
+   - 📋 **Rule Comparison** - Side-by-side view of Perl rules and ODM design
+   - 🧪 **Test Cases** - Browse 60 loan application scenarios
+   - ⚙️ **Decision Engine** - Simulate ODM decision execution
+   - 📊 **Parity Report** - Visual metrics and analysis
+
+### Option 2: Command-Line Exploration
 
 1. **Clone the repository:**
    ```bash
@@ -105,6 +132,21 @@ Legacy PERL-DSL Rules
 ```
 perl-to-odm-bob-demo/
 ├─ README.md                          ← You are here
+├─ start_dashboard.sh                 ← Quick-start script (Unix/macOS)
+├─ start_dashboard.bat                ← Quick-start script (Windows)
+│
+├─ web_dashboard/                     ← 🆕 Interactive Web Dashboard
+│  ├─ index.html                      ← Main entry point
+│  ├─ app.js                          ← Application controller
+│  ├─ README.md                       ← Dashboard documentation
+│  ├─ components/
+│  │  └─ BaseComponent.js             ← Reusable component base class
+│  ├─ services/
+│  │  └─ DataLoader.js                ← Data loading service
+│  ├─ styles/
+│  │  └─ main.css                     ← Responsive styles
+│  ├─ utils/                          ← Utility functions
+│  └─ data/                           ← Data directory
 │
 ├─ legacy_perl/                       ← The "before" state
 │  ├─ rules/
@@ -305,6 +347,7 @@ We welcome contributions to improve this demonstration project! Please see our [
 | ODM export placeholder structure | ✅ Complete |
 | Python utilities (`parity_check.py`, `invoke_odm_stub.py`) | ✅ Complete |
 | Bob prompt chain (`.bob/prompts/`) | ✅ Complete |
+| **Interactive Web Dashboard** | ✅ Complete (Day 1 Foundation) |
 
 ---
 
