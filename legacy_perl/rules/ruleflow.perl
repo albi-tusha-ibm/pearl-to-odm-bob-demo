@@ -1,5 +1,5 @@
 # =============================================================================
-# PEARL Rule File: ruleflow.perl
+# PERL Rule File: ruleflow.perl
 # Description:    Ruleflow definition — controls execution order of rule phases
 # Author:         IT / Rules Engine Team
 # Created:        ~2019 (estimated — pre-dates version control)
@@ -26,7 +26,7 @@
 #   - PricingCalculation phase has no guard — it relies on PRICE rules checking
 #     eligibility.result = approve internally. If a bug sets result incorrectly,
 #     pricing may run for non-approved loans.
-#     TODO: add phase-level condition guard when PEARL engine supports it
+#     TODO: add phase-level condition guard when PERL engine supports it
 #   - DocumentationRequirements runs for approve AND refer but not decline.
 #     This is enforced by convention only — no engine-level enforcement.
 # =============================================================================

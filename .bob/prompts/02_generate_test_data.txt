@@ -1,6 +1,6 @@
 PROMPT: Generate Comprehensive Test Data for Mortgage Insurance Underwriting
 
-Create 60 realistic loan application JSON files that comprehensively test the legacy PEARL-DSL rules and provide ground truth for parity validation.
+Create 60 realistic loan application JSON files that comprehensively test the legacy PERL-DSL rules and provide ground truth for parity validation.
 
 REQUIREMENTS:
 - Generate 60 loan applications with realistic data distributions:

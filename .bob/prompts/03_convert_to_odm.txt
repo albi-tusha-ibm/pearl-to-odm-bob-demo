@@ -1,6 +1,6 @@
 PROMPT: Design IBM ODM Decision Service Architecture for Modernized Rules
 
-Convert the legacy PEARL-DSL rules into a well-architected IBM ODM Decision Service, consolidating duplicates and applying best practices.
+Convert the legacy PERL-DSL rules into a well-architected IBM ODM Decision Service, consolidating duplicates and applying best practices.
 
 REQUIREMENTS:
 - Design a modular ODM Decision Service with 4 rule projects:
@@ -48,7 +48,7 @@ Create 6 comprehensive design documents:
    - Enumerations
    - Validation rules
 
-3. mappings_pearl_to_odm.md
+3. mappings_perl_to_odm.md
    - Detailed mapping table: Legacy rule → ODM artifact
    - Transformation rationale for each rule
    - Consolidation decisions

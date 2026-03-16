@@ -1,6 +1,6 @@
-# Contributing to Pearl to ODM Bob Demo
+# Contributing to Perl to ODM Bob Demo
 
-Thank you for your interest in contributing to this project! This document provides guidelines for contributing to the Pearl to ODM migration demonstration project.
+Thank you for your interest in contributing to this project! This document provides guidelines for contributing to the Perl to ODM migration demonstration project.
 
 ## Table of Contents
 

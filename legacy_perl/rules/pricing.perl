@@ -1,5 +1,5 @@
 # =============================================================================
-# PEARL Rule File: pricing.perl
+# PERL Rule File: pricing.perl
 # Description:    MI rate pricing rules — sets miRateBps based on LTV/credit
 # Author:         Pricing Team / IT
 # Created:        2021-06

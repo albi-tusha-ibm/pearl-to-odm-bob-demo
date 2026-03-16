@@ -165,9 +165,9 @@ The decision service executes rule projects in a specific sequence to mirror leg
                   ▼
 ┌─────────────────────────────────────────────────┐
 │   Rule Execution Server (Runtime)               │
-│  - DEV:  http://res-dev.mgic.com:9080/res       │
-│  - UAT:  http://res-uat.mgic.com:9080/res       │
-│  - PROD: http://res-prod.mgic.com:9080/res      │
+│  - DEV:  http://res-dev.example.com:9080/res       │
+│  - UAT:  http://res-uat.example.com:9080/res       │
+│  - PROD: http://res-prod.example.com:9080/res      │
 └─────────────────────────────────────────────────┘
 ```
 
@@ -179,7 +179,7 @@ The decision service executes rule projects in a specific sequence to mirror leg
    - Save as: `MI_Underwriting_v1.0.0.jar`
 
 2. **Deploy to Decision Center**
-   - Login to Decision Center: `http://dc.mgic.com:9060/decisioncenter`
+   - Login to Decision Center: `http://dc.example.com:9060/decisioncenter`
    - Navigate to "RuleApps" → "Deploy"
    - Upload `MI_Underwriting_v1.0.0.jar`
    - Set deployment target: DEV, UAT, or PROD
@@ -187,14 +187,14 @@ The decision service executes rule projects in a specific sequence to mirror leg
 3. **Deploy to RES**
    - Decision Center automatically deploys to configured RES instance
    - Alternatively, use RES Console:
-     - Login: `http://res-dev.mgic.com:9080/res/console`
+     - Login: `http://res-dev.example.com:9080/res/console`
      - Navigate to "RuleApps" → "Deploy"
      - Upload JAR and activate
 
 4. **Verify Deployment**
    - RES Console → "RuleApps" → `MI_Underwriting/1.0.0`
    - Status should show "Active"
-   - Test endpoint: `POST http://res-dev.mgic.com:9080/res/api/v1/MI_Underwriting/1.0.0/execute`
+   - Test endpoint: `POST http://res-dev.example.com:9080/res/api/v1/MI_Underwriting/1.0.0/execute`
 
 ### REST API Endpoint
 
@@ -208,7 +208,7 @@ Authorization: Basic <base64_credentials>
 
 **Sample cURL**:
 ```bash
-curl -X POST http://res-dev.mgic.com:9080/res/api/v1/MI_Underwriting/1.0.0/execute \
+curl -X POST http://res-dev.example.com:9080/res/api/v1/MI_Underwriting/1.0.0/execute \
   -H "Content-Type: application/json" \
   -H "Authorization: Basic dXNlcjpwYXNzd29yZA==" \
   -d @loan_app_001.json

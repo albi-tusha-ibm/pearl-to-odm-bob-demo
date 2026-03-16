@@ -1,6 +1,6 @@
-PROMPT: Create Legacy PEARL-DSL Rules for MGIC Mortgage Insurance Underwriting
+PROMPT: Create Legacy PERL-DSL Rules for Generic MI Carrier Mortgage Insurance Underwriting
 
-Generate a synthetic legacy rule system in PEARL-DSL format that represents a realistic but intentionally flawed mortgage insurance underwriting system.
+Generate a synthetic legacy rule system in PERL-DSL format that represents a realistic but intentionally flawed mortgage insurance underwriting system.
 
 REQUIREMENTS:
 - Create 30-35 rules across 4 categories:
@@ -37,7 +37,7 @@ OUTPUT STRUCTURE:
   1. pricing_matrix.csv (base rates by LTV/FICO bands)
   2. ltv_thresholds.csv (max LTV by property type/occupancy)
 
-PEARL-DSL SYNTAX:
+PERL-DSL SYNTAX:
 Use simple, readable syntax:
 - RULE <name>
 - WHEN <conditions>

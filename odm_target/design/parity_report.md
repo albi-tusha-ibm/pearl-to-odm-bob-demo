@@ -262,7 +262,7 @@ Row 1: LTV ≤ 80 AND FICO ≥ 740 AND occupancy == PRIMARY
 # Run parity validation
 python validate_parity.py \
   --legacy-samples legacy_perl/samples/ \
-  --odm-endpoint http://res-dev.mgic.com:9080/res/api/v1/MI_Underwriting/1.0.0/execute \
+  --odm-endpoint http://res-dev.example.com:9080/res/api/v1/MI_Underwriting/1.0.0/execute \
   --expected-decisions legacy_perl/samples/expected_decisions.csv \
   --output-report parity_report.json
 

@@ -1,5 +1,5 @@
 # =============================================================================
-# PEARL Rule File: underwriting.perl
+# PERL Rule File: underwriting.perl
 # Description:    Standard eligibility rules for MI underwriting decisions
 # Author:         Risk Policy / IT (original author unknown)
 # Created:        ~2017 (estimated — no version control before 2019)

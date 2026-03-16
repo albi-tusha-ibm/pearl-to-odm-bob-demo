@@ -293,7 +293,7 @@ class ParityChecker:
             Exit code (0 for success, 1 for failure)
         """
         print("=" * 60)
-        print("Pearl Modernization - Parity Validation")
+        print("Perl Modernization - Parity Validation")
         print("=" * 60)
         print()
         

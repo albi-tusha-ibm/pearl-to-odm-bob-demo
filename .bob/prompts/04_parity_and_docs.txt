@@ -6,9 +6,9 @@ REQUIREMENTS:
 
 ## Parity Validation Tool (parity_check.py)
 Create a Python script that:
-- Reads all 60 test loan applications from legacy_pearl/samples/
+- Reads all 60 test loan applications from legacy_perl/samples/
 - Reads expected decisions from expected_decisions.csv
-- Simulates legacy PEARL-DSL rule execution
+- Simulates legacy PERL-DSL rule execution
 - Simulates ODM rule execution (using the design specifications)
 - Compares decisions, rate adjustments, documentation requirements, and exceptions
 - Generates detailed parity report with:

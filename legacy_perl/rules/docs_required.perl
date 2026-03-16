@@ -1,5 +1,5 @@
 # =============================================================================
-# PEARL Rule File: docs_required.perl
+# PERL Rule File: docs_required.perl
 # Description:    Documentation requirement rules for MI underwriting
 # Author:         Compliance / Operations
 # Created:        2020-11

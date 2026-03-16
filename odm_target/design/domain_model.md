@@ -153,7 +153,7 @@ The XOM represents the Java implementation classes that execute at runtime. The 
 
 #### Java Package Structure
 ```
-com.mgic.underwriting.model
+com.example.underwriting.model
 ├── Loan.java
 ├── Borrower.java
 ├── Property.java
@@ -166,17 +166,17 @@ com.mgic.underwriting.model
 
 | BOM Class | XOM Class | Mapping Type |
 |-----------|-----------|--------------|
-| `Loan` | `com.mgic.underwriting.model.Loan` | Direct |
-| `Borrower` | `com.mgic.underwriting.model.Borrower` | Direct |
-| `Property` | `com.mgic.underwriting.model.Property` | Direct |
-| `EligibilityDecision` | `com.mgic.underwriting.model.EligibilityDecision` | Direct |
-| `PricingDecision` | `com.mgic.underwriting.model.PricingDecision` | Direct |
-| `DocumentationDecision` | `com.mgic.underwriting.model.DocumentationDecision` | Direct |
+| `Loan` | `com.example.underwriting.model.Loan` | Direct |
+| `Borrower` | `com.example.underwriting.model.Borrower` | Direct |
+| `Property` | `com.example.underwriting.model.Property` | Direct |
+| `EligibilityDecision` | `com.example.underwriting.model.EligibilityDecision` | Direct |
+| `PricingDecision` | `com.example.underwriting.model.PricingDecision` | Direct |
+| `DocumentationDecision` | `com.example.underwriting.model.DocumentationDecision` | Direct |
 
 ### Sample XOM Implementation (Loan.java)
 
 ```java
-package com.mgic.underwriting.model;
+package com.example.underwriting.model;
 
 public class Loan {
     private Double loanAmount;

@@ -391,7 +391,7 @@ All rule changes must include the following information:
 │  - Rule authoring and testing                   │
 │  - Frequent changes                             │
 │  - No SLA                                       │
-│  URL: http://res-dev.mgic.com:9080/res         │
+│  URL: http://res-dev.example.com:9080/res         │
 └─────────────────┬───────────────────────────────┘
                   │
                   │ (After regression tests pass)
@@ -401,7 +401,7 @@ All rule changes must include the following information:
 │  - Business user validation                     │
 │  - Stable environment                           │
 │  - 99% uptime SLA                               │
-│  URL: http://res-uat.mgic.com:9080/res         │
+│  URL: http://res-uat.example.com:9080/res         │
 └─────────────────┬───────────────────────────────┘
                   │
                   │ (After UAT sign-off)
@@ -411,7 +411,7 @@ All rule changes must include the following information:
 │  - Live decision execution                      │
 │  - High availability (3+ instances)             │
 │  - 99.9% uptime SLA                             │
-│  URL: http://res-prod.mgic.com:9080/res        │
+│  URL: http://res-prod.example.com:9080/res        │
 └─────────────────────────────────────────────────┘
 ```
 
@@ -773,10 +773,10 @@ If no rows match, default to 135 bps (high-risk tier).
 
 | Role | Contact | Email | Phone |
 |------|---------|-------|-------|
-| **ODM Support** | IT Helpdesk | odm-support@mgic.com | x5555 |
-| **Rule Authoring Questions** | Business Analysis Team | ba-team@mgic.com | x5556 |
-| **Compliance Questions** | Risk & Compliance | compliance@mgic.com | x5557 |
-| **Deployment Issues** | IT Operations | itops@mgic.com | x5558 |
+| **ODM Support** | IT Helpdesk | odm-support@example.com | x5555 |
+| **Rule Authoring Questions** | Business Analysis Team | ba-team@example.com | x5556 |
+| **Compliance Questions** | Risk & Compliance | compliance@example.com | x5557 |
+| **Deployment Issues** | IT Operations | itops@example.com | x5558 |
 
 ### Escalation Path
 

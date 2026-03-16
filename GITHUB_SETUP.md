@@ -20,7 +20,7 @@ This guide will help you push the `perl-to-odm-bob-demo` repository to GitHub.
 
 2. **Configure Repository Settings:**
    - **Repository name:** `perl-to-odm-bob-demo`
-   - **Description:** `MGIC PERL to IBM ODM Modernization Demo - Legacy rules migration powered by IBM Bob`
+   - **Description:** `Generic MI Carrier PERL to IBM ODM Modernization Demo - Legacy rules migration powered by IBM Bob`
    - **Visibility:** Choose Public or Private based on your needs
    - **DO NOT** initialize with README, .gitignore, or license (we already have these)
 
@@ -65,7 +65,7 @@ After pushing, configure your repository on GitHub:
 2. Click the ⚙️ (gear icon) next to "About"
 3. Add description:
    ```
-   MGIC PERL to IBM ODM Modernization Demo - Legacy rules migration powered by IBM Bob
+   Generic MI Carrier PERL to IBM ODM Modernization Demo - Legacy rules migration powered by IBM Bob
    ```
 4. Add topics (tags):
    - `ibm-odm`
@@ -111,7 +111,7 @@ For production repositories:
    ```bash
    git log --oneline -5
    ```
-   You should see your recent commit: "Rename project from PEARL to PERL for consistency"
+   You should see your recent commit: "Rename project from PERL to PERL for consistency"
 
 ## Repository Structure on GitHub
 

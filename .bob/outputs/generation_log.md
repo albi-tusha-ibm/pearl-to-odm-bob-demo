@@ -1,14 +1,14 @@
-# MGIC Pearl to ODM Modernization - Generation Log
+# Generic MI Carrier Perl to ODM Modernization - Generation Log
 
 ## Project Overview
-**Project Name**: MGIC Pearl to ODM Modernization Demo Repository  
+**Project Name**: Generic MI Carrier Perl to ODM Modernization Demo Repository  
 **Purpose**: Demonstrate end-to-end legacy rule modernization using IBM Bob AI  
 **Generation Date**: March 2, 2026  
 **Bob Version**: IBM Bob (Orchestrator Mode)  
-**Repository Location**: `pearl-to-odm-bob-demo/`
+**Repository Location**: `perl-to-odm-bob-demo/`
 
 ## Executive Summary
-This repository showcases a complete mortgage insurance underwriting system modernization from a legacy PEARL-DSL rule engine to IBM Operational Decision Manager (ODM). The project demonstrates Bob AI's capability to orchestrate complex, multi-phase software modernization projects with high fidelity and production-ready quality.
+This repository showcases a complete mortgage insurance underwriting system modernization from a legacy PERL-DSL rule engine to IBM Operational Decision Manager (ODM). The project demonstrates Bob AI's capability to orchestrate complex, multi-phase software modernization projects with high fidelity and production-ready quality.
 
 **Key Achievement**: 98.3% parity (59/60 test cases) with 40% rule consolidation and improved maintainability.
 
@@ -20,7 +20,7 @@ This repository showcases a complete mortgage insurance underwriting system mode
 **Objective**: Create realistic legacy rule system with intentional technical debt
 
 **Artifacts Created**:
-- 5 PEARL-DSL rule files (`.perl` format)
+- 5 PERL-DSL rule files (`.perl` format)
   * `underwriting.perl` - 12 eligibility rules
   * `pricing.perl` - 8 rate adjustment rules
   * `docs_required.perl` - 6 documentation rules
@@ -98,7 +98,7 @@ This repository showcases a complete mortgage insurance underwriting system mode
 - 6 comprehensive design documents (markdown)
   * `decision_service_arch.md` - Architecture overview (1,200 lines)
   * `domain_model.md` - BOM/XOM specifications (1,500 lines)
-  * `mappings_pearl_to_odm.md` - Transformation details (1,800 lines)
+  * `mappings_perl_to_odm.md` - Transformation details (1,800 lines)
   * `parity_report.md` - Validation analysis (1,000 lines)
   * `change_log.md` - Version history (800 lines)
   * `governance_and_release.md` - Operational procedures (1,400 lines)
@@ -109,7 +109,7 @@ This repository showcases a complete mortgage insurance underwriting system mode
 
 **ODM Architecture**:
 ```
-Decision Service: MGIC_Underwriting_Service
+Decision Service: Generic MI Carrier_Underwriting_Service
 ├── Rule Project: Eligibility_Rules (8 artifacts)
 │   ├── Decision Tables: LTV_Eligibility (4x3), FICO_Eligibility (3x2)
 │   ├── Action Rules: DTI_Check, Occupancy_Validation
@@ -169,7 +169,7 @@ Decision Service: MGIC_Underwriting_Service
 **Total Utility Code**: 563 lines
 
 **parity_check.py Features**:
-- Simulates legacy PEARL-DSL rule execution
+- Simulates legacy PERL-DSL rule execution
 - Simulates ODM rule execution based on design specs
 - Compares 4 decision dimensions:
   * Primary decision (Approve/Refer/Decline)
@@ -249,8 +249,8 @@ Decision Service: MGIC_Underwriting_Service
 
 ## Key Decisions & Rationale
 
-### 1. Choice of PEARL-DSL as Legacy Format
-**Decision**: Create synthetic PEARL-DSL instead of using actual legacy system  
+### 1. Choice of PERL-DSL as Legacy Format
+**Decision**: Create synthetic PERL-DSL instead of using actual legacy system  
 **Rationale**:
 - Simple, readable syntax for demo purposes
 - Easy to understand without domain expertise
@@ -258,7 +258,7 @@ Decision Service: MGIC_Underwriting_Service
 - No licensing or IP concerns
 - Fully controllable for demonstration scenarios
 
-**Alternative Considered**: Use actual MGIC legacy system  
+**Alternative Considered**: Use actual Generic MI Carrier legacy system  
 **Why Not**: Complexity, IP restrictions, harder to demonstrate specific patterns
 
 ---
@@ -333,13 +333,13 @@ Decision Service: MGIC_Underwriting_Service
 ### Quick Start
 ```bash
 # Navigate to repository
-cd pearl-to-odm-bob-demo/
+cd perl-to-odm-bob-demo/
 
 # Review legacy rules
-cat legacy_pearl/rules/underwriting.perl
+cat legacy_perl/rules/underwriting.perl
 
 # Examine test data
-cat legacy_pearl/samples/loan_app_001.json
+cat legacy_perl/samples/loan_app_001.json
 
 # Run parity validation
 python tools/parity_check.py
@@ -353,14 +353,14 @@ cat .bob/prompts/01_create_legacy_rules.txt
 
 ### Repository Navigation
 1. **Start with README.md**: Project overview and context
-2. **Explore legacy_pearl/**: Understand the legacy system
+2. **Explore legacy_perl/**: Understand the legacy system
 3. **Review test data**: See realistic loan applications
 4. **Study ODM design**: Understand the target architecture
 5. **Run utilities**: Validate parity and explore API
 6. **Read Bob documentation**: Understand the creation process
 
 ### For Developers
-- **Extend test data**: Add more loan scenarios in `legacy_pearl/samples/`
+- **Extend test data**: Add more loan scenarios in `legacy_perl/samples/`
 - **Modify rules**: Update `.perl` files and re-run parity check
 - **Enhance utilities**: Extend `parity_check.py` with new validations
 - **Implement ODM**: Use design docs to build actual ODM projects
@@ -374,7 +374,7 @@ cat .bob/prompts/01_create_legacy_rules.txt
 ### For Architects
 - **Architecture overview**: `odm_target/design/decision_service_arch.md`
 - **Domain model**: `odm_target/design/domain_model.md`
-- **Transformation strategy**: `odm_target/design/mappings_pearl_to_odm.md`
+- **Transformation strategy**: `odm_target/design/mappings_perl_to_odm.md`
 
 ---
 
@@ -401,7 +401,7 @@ cat .bob/prompts/01_create_legacy_rules.txt
 5. **Establish governance** process for rule changes
 
 ### Long-term Vision (3-6 months)
-1. **Decommission legacy PEARL-DSL** system
+1. **Decommission legacy PERL-DSL** system
 2. **Expand ODM usage** to other business areas
 3. **Implement rule analytics** and monitoring
 4. **Continuous improvement** of decision logic
@@ -426,7 +426,7 @@ cat .bob/prompts/01_create_legacy_rules.txt
 5. **Parity validation**: Provided confidence in transformation
 
 ### Challenges Overcome
-1. **Balancing realism with simplicity**: Made PEARL-DSL simple but realistic
+1. **Balancing realism with simplicity**: Made PERL-DSL simple but realistic
 2. **Test data variety**: Ensured comprehensive coverage without redundancy
 3. **Rule consolidation**: Identified duplicates and dead rules systematically
 4. **Documentation scope**: Kept docs comprehensive but not overwhelming

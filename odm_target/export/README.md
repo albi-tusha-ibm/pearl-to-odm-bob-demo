@@ -8,7 +8,7 @@
 
 This directory represents the structure of an ODM Rule Project Archive that would be exported from IBM ODM Rule Designer. The archive contains a complete, importable Decision Service for Mortgage Insurance (MI) underwriting, pricing, and documentation requirements.
 
-**Purpose:** This export enables migration from the legacy Pearl rule engine to IBM ODM by providing a fully-structured Decision Service that can be imported into ODM Rule Designer, tested, and deployed to Rule Execution Server (RES).
+**Purpose:** This export enables migration from the legacy Perl rule engine to IBM ODM by providing a fully-structured Decision Service that can be imported into ODM Rule Designer, tested, and deployed to Rule Execution Server (RES).
 
 **What's Included:**
 - Decision Service definition with orchestrated ruleflow
@@ -64,7 +64,7 @@ MI_Underwriting_1.0.0.zip
 │
 └── xom/                                # Execution Object Model (Java)
     ├── src/
-    │   └── com/mgic/underwriting/
+    │   └── com/example/underwriting/
     │       ├── Loan.java               # Main loan application object
     │       ├── Borrower.java           # Borrower information
     │       ├── Property.java           # Property details
@@ -470,7 +470,7 @@ After:  0.95%
 
 #### Add a New Attribute
 
-1. Open `xom/src/com/mgic/underwriting/Loan.java`
+1. Open `xom/src/com/example/underwriting/Loan.java`
 2. Add new field:
    ```java
    private boolean hasCoSigner;
@@ -493,7 +493,7 @@ After:  0.95%
 
 1. Create Java class in XOM:
    ```java
-   package com.mgic.underwriting;
+   package com.example.underwriting;
    
    public class CreditHistory {
        private int bankruptcyCount;
@@ -865,15 +865,15 @@ perl-to-odm-bob-demo/odm_target/design/governance_and_release.md
 ### Related Documentation in This Repository
 - `design/decision_service_arch.md` - Architecture overview
 - `design/domain_model.md` - Business object model details
-- `design/mappings_perl_to_odm.md` - Pearl to ODM rule mappings
-- `design/parity_report.md` - Validation of Pearl-to-ODM parity
+- `design/mappings_perl_to_odm.md` - Perl to ODM rule mappings
+- `design/parity_report.md` - Validation of Perl-to-ODM parity
 - `design/change_log.md` - History of rule changes
 - `design/governance_and_release.md` - Governance framework
 
 ---
 
 **Questions or Issues?**  
-Contact the ODM Migration Team: odm-migration@mgic.com
+Contact the ODM Migration Team: odm-migration@example.com
 
 **Last Updated:** March 2, 2026  
 **Document Version:** 1.0
