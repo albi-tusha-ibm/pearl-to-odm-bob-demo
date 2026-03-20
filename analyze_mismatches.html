@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mismatch Analysis</title>
+    <style>
+        body { font-family: monospace; padding: 20px; }
+        .match { color: green; }
+        .mismatch { color: red; font-weight: bold; }
+        .section { margin: 20px 0; padding: 10px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Detailed Mismatch Analysis</h1>
+    <div id="summary"></div>
+    <div id="details"></div>
+    
+    <script type="module">
+        import { DecisionSimulator } from './web_dashboard/services/DecisionSimulator.js';
+        import { DataLoader } from './web_dashboard/services/DataLoader.js';
+        
+        const summary = document.getElementById('summary');
+        const details = document.getElementById('details');
+        
+        async function analyze() {
+            const dataLoader = new DataLoader();
+            await dataLoader.loadAll();
+            
+            const simulator = new DecisionSimulator();
+            const testCases = dataLoader.testCases;
+            const expectedDecisions = dataLoader.expectedDecisions;
+            
+            let matches = 0;
+            let eligibilityMismatches = [];
+            let pricingMismatches = [];
+            
+            for (const testCase of testCases) {
+                const expected = expectedDecisions.find(e => {
+                    const csvFile = e.file || e.testCase || '';
+                    const testId = csvFile.replace('.json', '');
+                    return testId === testCase.id;
+                });
+                
+                if (!expected) continue;
+                
+                const simulated = simulator.simulate(testCase.data);
+                const expectedEligibility = (expected['eligibility.result'] || expected.eligibility || '').toLowerCase();
+                const simulatedEligibility = simulated.eligibility.result.toLowerCase();
+                
+                const eligibilityMatch = simulatedEligibility === expectedEligibility;
+                
+                let pricingMatch = true;
+                if (expectedEligibility === 'approve') {
+                    const expectedPricing = parseInt(expected.miRateBps);
+                    pricingMatch = simulated.pricing.miRateBps === expectedPricing;
+                    
+                    if (!pricingMatch) {
+                        pricingMismatches.push({
+                            id: testCase.id,
+                            ltv: testCase.data.loan.ltv,
+                            fico: testCase.data.borrower.creditScore,
+                            expected: expectedPricing,
+                            simulated: simulated.pricing.miRateBps
+                        });
+                    }
+                }
+                
+                if (eligibilityMatch && pricingMatch) {
+                    matches++;
+                } else if (!eligibilityMatch) {
+                    eligibilityMismatches.push({
+                        id: testCase.id,
+                        expected: expectedEligibility,
+                        simulated: simulatedEligibility,
+                        ltv: testCase.data.loan.ltv,
+                        fico: testCase.data.borrower.creditScore,
+                        dti: testCase.data.loan.dti,
+                        aus: testCase.data.aus.finding
+                    });
+                }
+            }
+            
+            summary.innerHTML = `
+                <h2>Summary</h2>
+                <p>Total Matches: ${matches}/${testCases.length} (${(matches/testCases.length*100).toFixed(1)}%)</p>
+                <p>Eligibility Mismatches: ${eligibilityMismatches.length}</p>
+                <p>Pricing Mismatches: ${pricingMismatches.length}</p>
+            `;
+            
+            if (eligibilityMismatches.length > 0) {
+                details.innerHTML += '<div class="section"><h3>Eligibility Mismatches</h3>';
+                eligibilityMismatches.forEach(m => {
+                    details.innerHTML += `
+                        <div class="mismatch">
+                            ${m.id}: Expected "${m.expected}" but got "${m.simulated}"<br>
+                            &nbsp;&nbsp;LTV=${m.ltv}, FICO=${m.fico}, DTI=${m.dti}, AUS=${m.aus}
+                        </div>
+                    `;
+                });
+                details.innerHTML += '</div>';
+            }
+            
+            if (pricingMismatches.length > 0) {
+                details.innerHTML += '<div class="section"><h3>Pricing Mismatches</h3>';
+                pricingMismatches.forEach(m => {
+                    details.innerHTML += `
+                        <div class="mismatch">
+                            ${m.id}: Expected ${m.expected} bps but got ${m.simulated} bps<br>
+                            &nbsp;&nbsp;LTV=${m.ltv}, FICO=${m.fico}
+                        </div>
+                    `;
+                });
+                details.innerHTML += '</div>';
+            }
+        }
+        
+        analyze();
+    </script>
+</body>
+</html>

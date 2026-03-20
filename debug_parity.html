@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parity Debug</title>
+</head>
+<body>
+    <h1>Parity Debug</h1>
+    <pre id="output"></pre>
+    
+    <script type="module">
+        import { DecisionSimulator } from './web_dashboard/services/DecisionSimulator.js';
+        import { DataLoader } from './web_dashboard/services/DataLoader.js';
+        
+        const output = document.getElementById('output');
+        
+        async function debug() {
+            const dataLoader = new DataLoader();
+            await dataLoader.loadAll();
+            
+            const simulator = new DecisionSimulator();
+            const testCases = dataLoader.testCases;
+            const expectedDecisions = dataLoader.expectedDecisions;
+            
+            let matches = 0;
+            let mismatches = [];
+            
+            for (const testCase of testCases) {
+                const expected = expectedDecisions.find(e => {
+                    const csvFile = e.file || e.testCase || '';
+                    const testId = csvFile.replace('.json', '');
+                    return testId === testCase.id;
+                });
+                
+                if (!expected) continue;
+                
+                const simulated = simulator.simulate(testCase.data);
+                const expectedEligibility = expected['eligibility.result'] || expected.eligibility || '';
+                
+                const match = simulated.eligibility.result.toLowerCase() === expectedEligibility.toLowerCase();
+                
+                if (match) {
+                    matches++;
+                } else {
+                    mismatches.push({
+                        id: testCase.id,
+                        expected: expectedEligibility,
+                        simulated: simulated.eligibility.result,
+                        expectedReason: expected.reason,
+                        simulatedReason: simulated.eligibility.reason
+                    });
+                }
+            }
+            
+            output.textContent = `Matches: ${matches}/${testCases.length}\n\n`;
+            output.textContent += `Mismatches:\n`;
+            mismatches.forEach(m => {
+                output.textContent += `\n${m.id}:\n`;
+                output.textContent += `  Expected: ${m.expected}\n`;
+                output.textContent += `  Simulated: ${m.simulated}\n`;
+                output.textContent += `  Expected Reason: ${m.expectedReason}\n`;
+                output.textContent += `  Simulated Reason: ${m.simulatedReason}\n`;
+            });
+        }
+        
+        debug();
+    </script>
+</body>
+</html>

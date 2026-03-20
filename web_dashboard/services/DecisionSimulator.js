@@ -42,7 +42,7 @@ export class DecisionSimulator {
             
             // 1. Exception Rules (Priority 1000)
             this.executeExceptionRules(loanData, decision);
-            if (decision.eligibility.result === 'decline') {
+            if (decision.eligibility.result === 'decline' || decision.eligibility.result === 'refer') {
                 decision.executionTime = performance.now() - startTime;
                 decision.rulesFired = this.rulesFired;
                 return decision;
@@ -93,36 +93,48 @@ export class DecisionSimulator {
         const borrower = loanData.borrower || {};
         const loan = loanData.loan || {};
 
-        // EXC-001: Bankruptcy Exception
+        // EXC-001: High-Risk Combination - Low FICO + High LTV on Primary Residence
+        // This exception rule must fire BEFORE eligibility decline rules (ELG-014)
+        // Priority 200 ensures it executes before eligibility rules (Priority 100-50)
+        if (borrower.creditScore >= 620 && borrower.creditScore < 680 &&
+            loan.ltv > 95 && loan.occupancy === 'primary') {
+            this.fireRule('EXC-001', 'High-Risk Combination - Refer to Senior Underwriter', 200);
+            decision.eligibility.result = 'refer';
+            decision.eligibility.reason = 'High-risk combination: low FICO (620-679) + high LTV (>95%) on primary residence — escalate to senior underwriter';
+            decision.eligibility.flags.push('MANUAL_REVIEW', 'HIGH_RISK');
+            return;
+        }
+
+        // EXC-002: Bankruptcy Exception
         if (borrower.bankruptcyFlag === true) {
-            this.fireRule('EXC-001', 'Bankruptcy Exception Rule', 1000);
+            this.fireRule('EXC-002', 'Bankruptcy Exception Rule', 1000);
             decision.eligibility.result = 'decline';
             decision.eligibility.reason = 'Recent bankruptcy within 7 years';
             decision.eligibility.flags.push('HIGH_RISK');
             return;
         }
 
-        // EXC-002: Foreclosure Exception
+        // EXC-003: Foreclosure Exception
         if (borrower.foreclosureFlag === true) {
-            this.fireRule('EXC-002', 'Foreclosure Exception Rule', 1000);
+            this.fireRule('EXC-003', 'Foreclosure Exception Rule', 1000);
             decision.eligibility.result = 'decline';
             decision.eligibility.reason = 'Recent foreclosure within 7 years';
             decision.eligibility.flags.push('HIGH_RISK');
             return;
         }
 
-        // EXC-003: Fraud Flag Exception
+        // EXC-004: Fraud Flag Exception
         if (borrower.fraudFlag === true) {
-            this.fireRule('EXC-003', 'Fraud Flag Exception Rule', 1000);
+            this.fireRule('EXC-004', 'Fraud Flag Exception Rule', 1000);
             decision.eligibility.result = 'decline';
             decision.eligibility.reason = 'Fraud indicator detected';
             decision.eligibility.flags.push('FRAUD_SUSPECTED');
             return;
         }
 
-        // EXC-004: Manual Review Flag
+        // EXC-005: Manual Review Flag
         if (loan.manualReviewRequired === true) {
-            this.fireRule('EXC-004', 'Manual Review Flag Rule', 1000);
+            this.fireRule('EXC-005', 'Manual Review Flag Rule', 1000);
             decision.eligibility.flags.push('MANUAL_REVIEW');
         }
     }
@@ -318,15 +330,8 @@ export class DecisionSimulator {
             return;
         }
 
-        // REF-006: High-risk combination - low FICO + high LTV on primary (Priority 54)
-        if (borrower.creditScore >= 620 && borrower.creditScore < 680 &&
-            loan.ltv > 95 && loan.occupancy === 'primary') {
-            this.fireRule('REF-006', 'High-Risk Combination Review', 54);
-            decision.eligibility.result = 'refer';
-            decision.eligibility.reason = 'High-risk combination: low FICO + high LTV on primary — escalate to senior underwriter';
-            decision.eligibility.flags.push('MANUAL_REVIEW', 'HIGH_RISK');
-            return;
-        }
+        // REF-006: Removed - now handled by EXC-001 in exception rules with higher priority
+        // This ensures the refer decision is made BEFORE eligibility decline rules fire
 
         // REF-007: ARM with high LTV and DTI (Priority 53)
         if (loan.productType === 'arm' && loan.ltv > 90 && loan.dti > 43) {

@@ -1,0 +1,6530 @@
+{
+  "summary": {
+    "totalTests": 60,
+    "matches": 0,
+    "mismatches": 60,
+    "overallParityPercentage": 0,
+    "averageExecutionTimeMs": 0.05
+  },
+  "fieldMatchRates": {
+    "eligibilityResult": {
+      "matches": 60,
+      "total": 60,
+      "percentage": "100.00"
+    },
+    "reason": {
+      "matches": 31,
+      "total": 60,
+      "percentage": "51.67"
+    },
+    "miRateBps": {
+      "matches": 60,
+      "total": 60,
+      "percentage": "100.00"
+    },
+    "flags": {
+      "matches": 18,
+      "total": 60,
+      "percentage": "30.00"
+    },
+    "requiredDocs": {
+      "matches": 22,
+      "total": 60,
+      "percentage": "36.67"
+    }
+  },
+  "mismatchedCases": [
+    {
+      "file": "loan_app_001.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "CREDIT_DECLINE",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_002.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "CREDIT_DECLINE",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_003.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "LTV_DECLINE",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_004.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "LTV_DECLINE",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_005.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "DTI_DECLINE",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_006.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "DTI_DECLINE",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_007.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "INVESTMENT_LTV_DECLINE",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_008.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "INVESTMENT_LTV_DECLINE",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_009.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "MULTI_UNIT_LTV_DECLINE",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_010.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "MULTI_UNIT_LTV_DECLINE",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_011.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "ARM product LTV exceeds 95%",
+          "expected": "ARM products not eligible above 95% LTV",
+          "type": "string"
+        },
+        {
+          "field": "flags",
+          "actual": "ARM_LTV_DECLINE",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_012.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "ARM product LTV exceeds 95%",
+          "expected": "ARM products not eligible above 95% LTV",
+          "type": "string"
+        },
+        {
+          "field": "flags",
+          "actual": "ARM_LTV_DECLINE",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_013.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "Second home LTV exceeds 90%",
+          "expected": "Second home LTV exceeds 90% maximum",
+          "type": "string"
+        },
+        {
+          "field": "flags",
+          "actual": "SECOND_HOME_LTV_DECLINE",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_014.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "Second home LTV exceeds 90%",
+          "expected": "Second home LTV exceeds 90% maximum",
+          "type": "string"
+        },
+        {
+          "field": "flags",
+          "actual": "SECOND_HOME_LTV_DECLINE",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_015.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "CREDIT_DECLINE",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_016.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "CREDIT_DECLINE",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_017.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "DTI_DECLINE",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_018.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "INVESTMENT_LTV_DECLINE",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_019.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW",
+          "expected": "",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_020.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW",
+          "expected": "",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_021.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW",
+          "expected": "",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_022.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW",
+          "expected": "",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Condo Questionnaire|HOA Documents",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_023.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW",
+          "expected": "",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_024.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW",
+          "expected": "",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_025.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW",
+          "expected": "",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_026.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW",
+          "expected": "",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_027.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW",
+          "expected": "",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate|Condo Questionnaire|HOA Documents",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_028.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW",
+          "expected": "",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate|Condo Questionnaire|HOA Documents",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_029.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW",
+          "expected": "",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_030.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW",
+          "expected": "",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_031.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "High-risk combination: low FICO (620-679) + high LTV (>95%) on primary residence — escalate to senior underwriter",
+          "expected": "High-risk combination: low FICO + high LTV on primary — escalate to senior underwriter",
+          "type": "string"
+        },
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW|HIGH_RISK",
+          "expected": "MANUAL_UW_REQUIRED|HIGH_RISK_COMBO",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_032.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "High-risk combination: low FICO (620-679) + high LTV (>95%) on primary residence — escalate to senior underwriter",
+          "expected": "High-risk combination: low FICO + high LTV on primary — escalate to senior underwriter",
+          "type": "string"
+        },
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW|HIGH_RISK",
+          "expected": "MANUAL_UW_REQUIRED|HIGH_RISK_COMBO",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_033.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW",
+          "expected": "MANUAL_UW_REQUIRED",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_034.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW",
+          "expected": "MANUAL_UW_REQUIRED",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_035.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW|STATE_RISK",
+          "expected": "STATE_RISK_OVERRIDE",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Condo Questionnaire|HOA Documents",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_036.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "Condo above 90% LTV requires additional review",
+          "expected": "Condo in elevated-risk state above 85% LTV — manual review",
+          "type": "string"
+        },
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW",
+          "expected": "STATE_RISK_OVERRIDE",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Condo Questionnaire|HOA Documents",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_037.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "High-risk combination: low FICO (620-679) + high LTV (>95%) on primary residence — escalate to senior underwriter",
+          "expected": "First-time buyer with high LTV and marginal credit — manual review",
+          "type": "string"
+        },
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW|HIGH_RISK",
+          "expected": "FTHB_HIGH_RISK|FTHB",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_038.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "High-risk combination: low FICO (620-679) + high LTV (>95%) on primary residence — escalate to senior underwriter",
+          "expected": "First-time buyer with high LTV and marginal credit — manual review",
+          "type": "string"
+        },
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW|HIGH_RISK",
+          "expected": "FTHB_HIGH_RISK|FTHB",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_039.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW",
+          "expected": "",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_040.json",
+      "mismatchedFields": [
+        {
+          "field": "flags",
+          "actual": "MANUAL_REVIEW",
+          "expected": "",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_041.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_042.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_043.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_044.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_045.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_046.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_047.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_048.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_049.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_050.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_051.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_052.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_053.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_054.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_055.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "flags",
+          "actual": "",
+          "expected": "FTHB",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_056.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "flags",
+          "actual": "",
+          "expected": "FTHB",
+          "type": "mismatch"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_057.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_058.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_059.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    },
+    {
+      "file": "loan_app_060.json",
+      "mismatchedFields": [
+        {
+          "field": "reason",
+          "actual": "All eligibility criteria met",
+          "expected": "AUS approved — meets standard eligibility criteria",
+          "type": "string"
+        },
+        {
+          "field": "requiredDocs",
+          "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+          "expected": "",
+          "type": "mismatch"
+        }
+      ]
+    }
+  ],
+  "allResults": [
+    {
+      "file": "loan_app_001.json",
+      "decision": {
+        "loanId": "LOAN-001",
+        "eligibility": {
+          "result": "decline",
+          "reason": "Credit score below minimum threshold",
+          "flags": [
+            "CREDIT_DECLINE"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "ELG-001",
+            "ruleName": "Credit Score Minimum",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.586Z"
+          }
+        ],
+        "executionTime": 1.312250000000006
+      },
+      "expected": {
+        "eligibilityResult": "decline",
+        "reason": "Credit score below minimum threshold",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_001.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "decline",
+            "expected": "decline",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "Credit score below minimum threshold",
+            "expected": "Credit score below minimum threshold",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "CREDIT_DECLINE",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "CREDIT_DECLINE"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 2
+    },
+    {
+      "file": "loan_app_002.json",
+      "decision": {
+        "loanId": "LOAN-002",
+        "eligibility": {
+          "result": "decline",
+          "reason": "Credit score below minimum threshold",
+          "flags": [
+            "CREDIT_DECLINE"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "ELG-001",
+            "ruleName": "Credit Score Minimum",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.010457999999999856
+      },
+      "expected": {
+        "eligibilityResult": "decline",
+        "reason": "Credit score below minimum threshold",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_002.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "decline",
+            "expected": "decline",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "Credit score below minimum threshold",
+            "expected": "Credit score below minimum threshold",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "CREDIT_DECLINE",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "CREDIT_DECLINE"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_003.json",
+      "decision": {
+        "loanId": "LOAN-003",
+        "eligibility": {
+          "result": "decline",
+          "reason": "LTV exceeds maximum allowable 97%",
+          "flags": [
+            "LTV_DECLINE"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "ELG-002",
+            "ruleName": "Maximum LTV",
+            "priority": 99,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.03216700000000117
+      },
+      "expected": {
+        "eligibilityResult": "decline",
+        "reason": "LTV exceeds maximum allowable 97%",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_003.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "decline",
+            "expected": "decline",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "LTV exceeds maximum allowable 97%",
+            "expected": "LTV exceeds maximum allowable 97%",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "LTV_DECLINE",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "LTV_DECLINE"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_004.json",
+      "decision": {
+        "loanId": "LOAN-004",
+        "eligibility": {
+          "result": "decline",
+          "reason": "LTV exceeds maximum allowable 97%",
+          "flags": [
+            "LTV_DECLINE"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "ELG-002",
+            "ruleName": "Maximum LTV",
+            "priority": 99,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.00462500000000432
+      },
+      "expected": {
+        "eligibilityResult": "decline",
+        "reason": "LTV exceeds maximum allowable 97%",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_004.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "decline",
+            "expected": "decline",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "LTV exceeds maximum allowable 97%",
+            "expected": "LTV exceeds maximum allowable 97%",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "LTV_DECLINE",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "LTV_DECLINE"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_005.json",
+      "decision": {
+        "loanId": "LOAN-005",
+        "eligibility": {
+          "result": "decline",
+          "reason": "DTI exceeds maximum 50%",
+          "flags": [
+            "DTI_DECLINE"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "ELG-003",
+            "ruleName": "Maximum DTI",
+            "priority": 98,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.004542000000000712
+      },
+      "expected": {
+        "eligibilityResult": "decline",
+        "reason": "DTI exceeds maximum 50%",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_005.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "decline",
+            "expected": "decline",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "DTI exceeds maximum 50%",
+            "expected": "DTI exceeds maximum 50%",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "DTI_DECLINE",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "DTI_DECLINE"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_006.json",
+      "decision": {
+        "loanId": "LOAN-006",
+        "eligibility": {
+          "result": "decline",
+          "reason": "DTI exceeds maximum 50%",
+          "flags": [
+            "DTI_DECLINE"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "ELG-003",
+            "ruleName": "Maximum DTI",
+            "priority": 98,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.003583000000006109
+      },
+      "expected": {
+        "eligibilityResult": "decline",
+        "reason": "DTI exceeds maximum 50%",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_006.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "decline",
+            "expected": "decline",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "DTI exceeds maximum 50%",
+            "expected": "DTI exceeds maximum 50%",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "DTI_DECLINE",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "DTI_DECLINE"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_007.json",
+      "decision": {
+        "loanId": "LOAN-007",
+        "eligibility": {
+          "result": "decline",
+          "reason": "Investment property LTV exceeds 85%",
+          "flags": [
+            "INVESTMENT_LTV_DECLINE"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "ELG-004",
+            "ruleName": "Investment Property LTV",
+            "priority": 95,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.003458000000009065
+      },
+      "expected": {
+        "eligibilityResult": "decline",
+        "reason": "Investment property LTV exceeds 85%",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_007.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "decline",
+            "expected": "decline",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "Investment property LTV exceeds 85%",
+            "expected": "Investment property LTV exceeds 85%",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "INVESTMENT_LTV_DECLINE",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "INVESTMENT_LTV_DECLINE"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_008.json",
+      "decision": {
+        "loanId": "LOAN-008",
+        "eligibility": {
+          "result": "decline",
+          "reason": "Investment property LTV exceeds 85%",
+          "flags": [
+            "INVESTMENT_LTV_DECLINE"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "ELG-004",
+            "ruleName": "Investment Property LTV",
+            "priority": 95,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.0050829999999990605
+      },
+      "expected": {
+        "eligibilityResult": "decline",
+        "reason": "Investment property LTV exceeds 85%",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_008.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "decline",
+            "expected": "decline",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "Investment property LTV exceeds 85%",
+            "expected": "Investment property LTV exceeds 85%",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "INVESTMENT_LTV_DECLINE",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "INVESTMENT_LTV_DECLINE"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_009.json",
+      "decision": {
+        "loanId": "LOAN-009",
+        "eligibility": {
+          "result": "decline",
+          "reason": "2-4 unit property LTV exceeds 80%",
+          "flags": [
+            "MULTI_UNIT_LTV_DECLINE"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "ELG-005",
+            "ruleName": "2-4 Unit Property LTV",
+            "priority": 90,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.005624999999994884
+      },
+      "expected": {
+        "eligibilityResult": "decline",
+        "reason": "2-4 unit property LTV exceeds 80%",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_009.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "decline",
+            "expected": "decline",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "2-4 unit property LTV exceeds 80%",
+            "expected": "2-4 unit property LTV exceeds 80%",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MULTI_UNIT_LTV_DECLINE",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MULTI_UNIT_LTV_DECLINE"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_010.json",
+      "decision": {
+        "loanId": "LOAN-010",
+        "eligibility": {
+          "result": "decline",
+          "reason": "2-4 unit property LTV exceeds 80%",
+          "flags": [
+            "MULTI_UNIT_LTV_DECLINE"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "ELG-005",
+            "ruleName": "2-4 Unit Property LTV",
+            "priority": 90,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.006500000000002615
+      },
+      "expected": {
+        "eligibilityResult": "decline",
+        "reason": "2-4 unit property LTV exceeds 80%",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_010.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "decline",
+            "expected": "decline",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "2-4 unit property LTV exceeds 80%",
+            "expected": "2-4 unit property LTV exceeds 80%",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MULTI_UNIT_LTV_DECLINE",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MULTI_UNIT_LTV_DECLINE"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_011.json",
+      "decision": {
+        "loanId": "LOAN-011",
+        "eligibility": {
+          "result": "decline",
+          "reason": "ARM product LTV exceeds 95%",
+          "flags": [
+            "ARM_LTV_DECLINE"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "ELG-006",
+            "ruleName": "ARM Product LTV Cap",
+            "priority": 85,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.004041999999998325
+      },
+      "expected": {
+        "eligibilityResult": "decline",
+        "reason": "ARM products not eligible above 95% LTV",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_011.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "decline",
+            "expected": "decline",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "ARM product LTV exceeds 95%",
+            "expected": "ARM products not eligible above 95% LTV",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "ARM_LTV_DECLINE",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "ARM_LTV_DECLINE"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_012.json",
+      "decision": {
+        "loanId": "LOAN-012",
+        "eligibility": {
+          "result": "decline",
+          "reason": "ARM product LTV exceeds 95%",
+          "flags": [
+            "ARM_LTV_DECLINE"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "ELG-006",
+            "ruleName": "ARM Product LTV Cap",
+            "priority": 85,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.0029590000000041528
+      },
+      "expected": {
+        "eligibilityResult": "decline",
+        "reason": "ARM products not eligible above 95% LTV",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_012.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "decline",
+            "expected": "decline",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "ARM product LTV exceeds 95%",
+            "expected": "ARM products not eligible above 95% LTV",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "ARM_LTV_DECLINE",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "ARM_LTV_DECLINE"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_013.json",
+      "decision": {
+        "loanId": "LOAN-013",
+        "eligibility": {
+          "result": "decline",
+          "reason": "Second home LTV exceeds 90%",
+          "flags": [
+            "SECOND_HOME_LTV_DECLINE"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "ELG-009",
+            "ruleName": "Second Home LTV",
+            "priority": 70,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.0029579999999924667
+      },
+      "expected": {
+        "eligibilityResult": "decline",
+        "reason": "Second home LTV exceeds 90% maximum",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_013.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "decline",
+            "expected": "decline",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "Second home LTV exceeds 90%",
+            "expected": "Second home LTV exceeds 90% maximum",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "SECOND_HOME_LTV_DECLINE",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "SECOND_HOME_LTV_DECLINE"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_014.json",
+      "decision": {
+        "loanId": "LOAN-014",
+        "eligibility": {
+          "result": "decline",
+          "reason": "Second home LTV exceeds 90%",
+          "flags": [
+            "SECOND_HOME_LTV_DECLINE"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "ELG-009",
+            "ruleName": "Second Home LTV",
+            "priority": 70,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.0024999999999977263
+      },
+      "expected": {
+        "eligibilityResult": "decline",
+        "reason": "Second home LTV exceeds 90% maximum",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_014.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "decline",
+            "expected": "decline",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "Second home LTV exceeds 90%",
+            "expected": "Second home LTV exceeds 90% maximum",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "SECOND_HOME_LTV_DECLINE",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "SECOND_HOME_LTV_DECLINE"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_015.json",
+      "decision": {
+        "loanId": "LOAN-015",
+        "eligibility": {
+          "result": "decline",
+          "reason": "Credit score below minimum threshold",
+          "flags": [
+            "CREDIT_DECLINE"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "ELG-001",
+            "ruleName": "Credit Score Minimum",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.002375000000000682
+      },
+      "expected": {
+        "eligibilityResult": "decline",
+        "reason": "Credit score below minimum threshold",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_015.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "decline",
+            "expected": "decline",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "Credit score below minimum threshold",
+            "expected": "Credit score below minimum threshold",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "CREDIT_DECLINE",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "CREDIT_DECLINE"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_016.json",
+      "decision": {
+        "loanId": "LOAN-016",
+        "eligibility": {
+          "result": "decline",
+          "reason": "Credit score below minimum threshold",
+          "flags": [
+            "CREDIT_DECLINE"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "ELG-001",
+            "ruleName": "Credit Score Minimum",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.002249999999989427
+      },
+      "expected": {
+        "eligibilityResult": "decline",
+        "reason": "Credit score below minimum threshold",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_016.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "decline",
+            "expected": "decline",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "Credit score below minimum threshold",
+            "expected": "Credit score below minimum threshold",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "CREDIT_DECLINE",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "CREDIT_DECLINE"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_017.json",
+      "decision": {
+        "loanId": "LOAN-017",
+        "eligibility": {
+          "result": "decline",
+          "reason": "DTI exceeds maximum 50%",
+          "flags": [
+            "DTI_DECLINE"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "ELG-003",
+            "ruleName": "Maximum DTI",
+            "priority": 98,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.002332999999993035
+      },
+      "expected": {
+        "eligibilityResult": "decline",
+        "reason": "DTI exceeds maximum 50%",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_017.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "decline",
+            "expected": "decline",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "DTI exceeds maximum 50%",
+            "expected": "DTI exceeds maximum 50%",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "DTI_DECLINE",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "DTI_DECLINE"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_018.json",
+      "decision": {
+        "loanId": "LOAN-018",
+        "eligibility": {
+          "result": "decline",
+          "reason": "Investment property LTV exceeds 85%",
+          "flags": [
+            "INVESTMENT_LTV_DECLINE"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "ELG-004",
+            "ruleName": "Investment Property LTV",
+            "priority": 95,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.008040999999991527
+      },
+      "expected": {
+        "eligibilityResult": "decline",
+        "reason": "Investment property LTV exceeds 85%",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_018.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "decline",
+            "expected": "decline",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "Investment property LTV exceeds 85%",
+            "expected": "Investment property LTV exceeds 85%",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "INVESTMENT_LTV_DECLINE",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "INVESTMENT_LTV_DECLINE"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_019.json",
+      "decision": {
+        "loanId": "LOAN-019",
+        "eligibility": {
+          "result": "refer",
+          "reason": "Low credit score with high LTV requires manual review",
+          "flags": [
+            "MANUAL_REVIEW"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal",
+            "Mortgage Insurance Certificate"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "REF-001",
+            "ruleName": "Low Credit Score with High LTV - Manual Review",
+            "priority": 60,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-004",
+            "ruleName": "High LTV Documentation",
+            "priority": 47,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.11658300000000565
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "Low credit score with high LTV requires manual review",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_019.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "Low credit score with high LTV requires manual review",
+            "expected": "Low credit score with high LTV requires manual review",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Mortgage Insurance Certificate",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_020.json",
+      "decision": {
+        "loanId": "LOAN-020",
+        "eligibility": {
+          "result": "refer",
+          "reason": "Low credit score with high LTV requires manual review",
+          "flags": [
+            "MANUAL_REVIEW"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal",
+            "Mortgage Insurance Certificate"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "REF-001",
+            "ruleName": "Low Credit Score with High LTV - Manual Review",
+            "priority": 60,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-004",
+            "ruleName": "High LTV Documentation",
+            "priority": 47,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.008291999999997302
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "Low credit score with high LTV requires manual review",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_020.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "Low credit score with high LTV requires manual review",
+            "expected": "Low credit score with high LTV requires manual review",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Mortgage Insurance Certificate",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_021.json",
+      "decision": {
+        "loanId": "LOAN-021",
+        "eligibility": {
+          "result": "refer",
+          "reason": "DU Refer requires manual underwriting review",
+          "flags": [
+            "MANUAL_REVIEW"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "REF-002",
+            "ruleName": "DU Refer - Manual Underwriting",
+            "priority": 58,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.00416700000000958
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "DU Refer requires manual underwriting review",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_021.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "DU Refer requires manual underwriting review",
+            "expected": "DU Refer requires manual underwriting review",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_022.json",
+      "decision": {
+        "loanId": "LOAN-022",
+        "eligibility": {
+          "result": "refer",
+          "reason": "DU Refer requires manual underwriting review",
+          "flags": [
+            "MANUAL_REVIEW"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal",
+            "Condo Questionnaire",
+            "HOA Documents"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "REF-002",
+            "ruleName": "DU Refer - Manual Underwriting",
+            "priority": 58,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-006",
+            "ruleName": "Condo Documentation",
+            "priority": 45,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.00808400000001086
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "DU Refer requires manual underwriting review",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_022.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "DU Refer requires manual underwriting review",
+            "expected": "DU Refer requires manual underwriting review",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Condo Questionnaire|HOA Documents",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Condo Questionnaire",
+              "Credit Report",
+              "HOA Documents",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_023.json",
+      "decision": {
+        "loanId": "LOAN-023",
+        "eligibility": {
+          "result": "refer",
+          "reason": "No AUS finding — manual underwriting required",
+          "flags": [
+            "MANUAL_REVIEW"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "REF-003",
+            "ruleName": "No AUS Finding - Manual Underwriting",
+            "priority": 57,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.005750000000006139
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "No AUS finding — manual underwriting required",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_023.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "No AUS finding — manual underwriting required",
+            "expected": "No AUS finding — manual underwriting required",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_024.json",
+      "decision": {
+        "loanId": "LOAN-024",
+        "eligibility": {
+          "result": "refer",
+          "reason": "No AUS finding — manual underwriting required",
+          "flags": [
+            "MANUAL_REVIEW"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "REF-003",
+            "ruleName": "No AUS Finding - Manual Underwriting",
+            "priority": 57,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.005791999999999575
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "No AUS finding — manual underwriting required",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_024.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "No AUS finding — manual underwriting required",
+            "expected": "No AUS finding — manual underwriting required",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_025.json",
+      "decision": {
+        "loanId": "LOAN-025",
+        "eligibility": {
+          "result": "refer",
+          "reason": "High DTI with marginal credit requires review",
+          "flags": [
+            "MANUAL_REVIEW"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "REF-004",
+            "ruleName": "High DTI with Marginal Credit",
+            "priority": 56,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.005083000000013271
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "High DTI with marginal credit requires review",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_025.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "High DTI with marginal credit requires review",
+            "expected": "High DTI with marginal credit requires review",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_026.json",
+      "decision": {
+        "loanId": "LOAN-026",
+        "eligibility": {
+          "result": "refer",
+          "reason": "High DTI with marginal credit requires review",
+          "flags": [
+            "MANUAL_REVIEW"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "REF-004",
+            "ruleName": "High DTI with Marginal Credit",
+            "priority": 56,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.0035419999999959373
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "High DTI with marginal credit requires review",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_026.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "High DTI with marginal credit requires review",
+            "expected": "High DTI with marginal credit requires review",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_027.json",
+      "decision": {
+        "loanId": "LOAN-027",
+        "eligibility": {
+          "result": "refer",
+          "reason": "Condo above 90% LTV requires additional review",
+          "flags": [
+            "MANUAL_REVIEW"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal",
+            "Mortgage Insurance Certificate",
+            "Condo Questionnaire",
+            "HOA Documents"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "REF-005",
+            "ruleName": "Condo High LTV Review",
+            "priority": 55,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-004",
+            "ruleName": "High LTV Documentation",
+            "priority": 47,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-006",
+            "ruleName": "Condo Documentation",
+            "priority": 45,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.005124999999992497
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "Condo above 90% LTV requires additional review",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_027.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "Condo above 90% LTV requires additional review",
+            "expected": "Condo above 90% LTV requires additional review",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate|Condo Questionnaire|HOA Documents",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Condo Questionnaire",
+              "Credit Report",
+              "HOA Documents",
+              "Income Verification",
+              "Mortgage Insurance Certificate",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_028.json",
+      "decision": {
+        "loanId": "LOAN-028",
+        "eligibility": {
+          "result": "refer",
+          "reason": "Condo above 90% LTV requires additional review",
+          "flags": [
+            "MANUAL_REVIEW"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal",
+            "Mortgage Insurance Certificate",
+            "Condo Questionnaire",
+            "HOA Documents"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "REF-005",
+            "ruleName": "Condo High LTV Review",
+            "priority": 55,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-004",
+            "ruleName": "High LTV Documentation",
+            "priority": 47,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-006",
+            "ruleName": "Condo Documentation",
+            "priority": 45,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.009957999999997469
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "Condo above 90% LTV requires additional review",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_028.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "Condo above 90% LTV requires additional review",
+            "expected": "Condo above 90% LTV requires additional review",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate|Condo Questionnaire|HOA Documents",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Condo Questionnaire",
+              "Credit Report",
+              "HOA Documents",
+              "Income Verification",
+              "Mortgage Insurance Certificate",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_029.json",
+      "decision": {
+        "loanId": "LOAN-029",
+        "eligibility": {
+          "result": "refer",
+          "reason": "DU Refer requires manual underwriting review",
+          "flags": [
+            "MANUAL_REVIEW"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "REF-002",
+            "ruleName": "DU Refer - Manual Underwriting",
+            "priority": 58,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.007833000000005086
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "DU Refer requires manual underwriting review",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_029.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "DU Refer requires manual underwriting review",
+            "expected": "DU Refer requires manual underwriting review",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_030.json",
+      "decision": {
+        "loanId": "LOAN-030",
+        "eligibility": {
+          "result": "refer",
+          "reason": "No AUS finding — manual underwriting required",
+          "flags": [
+            "MANUAL_REVIEW"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "REF-003",
+            "ruleName": "No AUS Finding - Manual Underwriting",
+            "priority": 57,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.004417000000003668
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "No AUS finding — manual underwriting required",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_030.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "No AUS finding — manual underwriting required",
+            "expected": "No AUS finding — manual underwriting required",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_031.json",
+      "decision": {
+        "loanId": "LOAN-031",
+        "eligibility": {
+          "result": "refer",
+          "reason": "High-risk combination: low FICO (620-679) + high LTV (>95%) on primary residence — escalate to senior underwriter",
+          "flags": [
+            "MANUAL_REVIEW",
+            "HIGH_RISK"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "EXC-001",
+            "ruleName": "High-Risk Combination - Refer to Senior Underwriter",
+            "priority": 200,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.0031659999999931188
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "High-risk combination: low FICO + high LTV on primary — escalate to senior underwriter",
+        "miRateBps": "",
+        "flags": "MANUAL_UW_REQUIRED|HIGH_RISK_COMBO",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_031.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "High-risk combination: low FICO (620-679) + high LTV (>95%) on primary residence — escalate to senior underwriter",
+            "expected": "High-risk combination: low FICO + high LTV on primary — escalate to senior underwriter",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW|HIGH_RISK",
+            "expected": "MANUAL_UW_REQUIRED|HIGH_RISK_COMBO",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "HIGH_RISK",
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": [
+              "HIGH_RISK_COMBO",
+              "MANUAL_UW_REQUIRED"
+            ]
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_032.json",
+      "decision": {
+        "loanId": "LOAN-032",
+        "eligibility": {
+          "result": "refer",
+          "reason": "High-risk combination: low FICO (620-679) + high LTV (>95%) on primary residence — escalate to senior underwriter",
+          "flags": [
+            "MANUAL_REVIEW",
+            "HIGH_RISK"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "EXC-001",
+            "ruleName": "High-Risk Combination - Refer to Senior Underwriter",
+            "priority": 200,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.0014579999999995152
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "High-risk combination: low FICO + high LTV on primary — escalate to senior underwriter",
+        "miRateBps": "",
+        "flags": "MANUAL_UW_REQUIRED|HIGH_RISK_COMBO",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_032.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "High-risk combination: low FICO (620-679) + high LTV (>95%) on primary residence — escalate to senior underwriter",
+            "expected": "High-risk combination: low FICO + high LTV on primary — escalate to senior underwriter",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW|HIGH_RISK",
+            "expected": "MANUAL_UW_REQUIRED|HIGH_RISK_COMBO",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "HIGH_RISK",
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": [
+              "HIGH_RISK_COMBO",
+              "MANUAL_UW_REQUIRED"
+            ]
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_033.json",
+      "decision": {
+        "loanId": "LOAN-033",
+        "eligibility": {
+          "result": "refer",
+          "reason": "ARM with high LTV and DTI — manual review required",
+          "flags": [
+            "MANUAL_REVIEW"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal",
+            "Mortgage Insurance Certificate"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "REF-007",
+            "ruleName": "ARM High Risk Review",
+            "priority": 53,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-004",
+            "ruleName": "High LTV Documentation",
+            "priority": 47,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.004582999999996673
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "ARM with high LTV and DTI — manual review required",
+        "miRateBps": "",
+        "flags": "MANUAL_UW_REQUIRED",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_033.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "ARM with high LTV and DTI — manual review required",
+            "expected": "ARM with high LTV and DTI — manual review required",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW",
+            "expected": "MANUAL_UW_REQUIRED",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": [
+              "MANUAL_UW_REQUIRED"
+            ]
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Mortgage Insurance Certificate",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_034.json",
+      "decision": {
+        "loanId": "LOAN-034",
+        "eligibility": {
+          "result": "refer",
+          "reason": "ARM with high LTV and DTI — manual review required",
+          "flags": [
+            "MANUAL_REVIEW"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal",
+            "Mortgage Insurance Certificate"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "REF-007",
+            "ruleName": "ARM High Risk Review",
+            "priority": 53,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-004",
+            "ruleName": "High LTV Documentation",
+            "priority": 47,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.0036249999999995453
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "ARM with high LTV and DTI — manual review required",
+        "miRateBps": "",
+        "flags": "MANUAL_UW_REQUIRED",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_034.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "ARM with high LTV and DTI — manual review required",
+            "expected": "ARM with high LTV and DTI — manual review required",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW",
+            "expected": "MANUAL_UW_REQUIRED",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": [
+              "MANUAL_UW_REQUIRED"
+            ]
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Mortgage Insurance Certificate",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_035.json",
+      "decision": {
+        "loanId": "LOAN-035",
+        "eligibility": {
+          "result": "refer",
+          "reason": "Condo in elevated-risk state above 85% LTV — manual review",
+          "flags": [
+            "MANUAL_REVIEW",
+            "STATE_RISK"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal",
+            "Condo Questionnaire",
+            "HOA Documents"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "REF-008",
+            "ruleName": "Condo State Risk Review",
+            "priority": 52,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-006",
+            "ruleName": "Condo Documentation",
+            "priority": 45,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.00462500000000432
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "Condo in elevated-risk state above 85% LTV — manual review",
+        "miRateBps": "",
+        "flags": "STATE_RISK_OVERRIDE",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_035.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "Condo in elevated-risk state above 85% LTV — manual review",
+            "expected": "Condo in elevated-risk state above 85% LTV — manual review",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW|STATE_RISK",
+            "expected": "STATE_RISK_OVERRIDE",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MANUAL_REVIEW",
+              "STATE_RISK"
+            ],
+            "expectedList": [
+              "STATE_RISK_OVERRIDE"
+            ]
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Condo Questionnaire|HOA Documents",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Condo Questionnaire",
+              "Credit Report",
+              "HOA Documents",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_036.json",
+      "decision": {
+        "loanId": "LOAN-036",
+        "eligibility": {
+          "result": "refer",
+          "reason": "Condo above 90% LTV requires additional review",
+          "flags": [
+            "MANUAL_REVIEW"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal",
+            "Condo Questionnaire",
+            "HOA Documents"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "REF-005",
+            "ruleName": "Condo High LTV Review",
+            "priority": 55,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-006",
+            "ruleName": "Condo Documentation",
+            "priority": 45,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.003416000000001418
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "Condo in elevated-risk state above 85% LTV — manual review",
+        "miRateBps": "",
+        "flags": "STATE_RISK_OVERRIDE",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_036.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "Condo above 90% LTV requires additional review",
+            "expected": "Condo in elevated-risk state above 85% LTV — manual review",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW",
+            "expected": "STATE_RISK_OVERRIDE",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": [
+              "STATE_RISK_OVERRIDE"
+            ]
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Condo Questionnaire|HOA Documents",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Condo Questionnaire",
+              "Credit Report",
+              "HOA Documents",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_037.json",
+      "decision": {
+        "loanId": "LOAN-037",
+        "eligibility": {
+          "result": "refer",
+          "reason": "High-risk combination: low FICO (620-679) + high LTV (>95%) on primary residence — escalate to senior underwriter",
+          "flags": [
+            "MANUAL_REVIEW",
+            "HIGH_RISK"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "EXC-001",
+            "ruleName": "High-Risk Combination - Refer to Senior Underwriter",
+            "priority": 200,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.001125000000001819
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "First-time buyer with high LTV and marginal credit — manual review",
+        "miRateBps": "",
+        "flags": "FTHB_HIGH_RISK|FTHB",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_037.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "High-risk combination: low FICO (620-679) + high LTV (>95%) on primary residence — escalate to senior underwriter",
+            "expected": "First-time buyer with high LTV and marginal credit — manual review",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW|HIGH_RISK",
+            "expected": "FTHB_HIGH_RISK|FTHB",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "HIGH_RISK",
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": [
+              "FTHB",
+              "FTHB_HIGH_RISK"
+            ]
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_038.json",
+      "decision": {
+        "loanId": "LOAN-038",
+        "eligibility": {
+          "result": "refer",
+          "reason": "High-risk combination: low FICO (620-679) + high LTV (>95%) on primary residence — escalate to senior underwriter",
+          "flags": [
+            "MANUAL_REVIEW",
+            "HIGH_RISK"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": []
+        },
+        "rulesFired": [
+          {
+            "ruleId": "EXC-001",
+            "ruleName": "High-Risk Combination - Refer to Senior Underwriter",
+            "priority": 200,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.0010830000000083828
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "First-time buyer with high LTV and marginal credit — manual review",
+        "miRateBps": "",
+        "flags": "FTHB_HIGH_RISK|FTHB",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_038.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "High-risk combination: low FICO (620-679) + high LTV (>95%) on primary residence — escalate to senior underwriter",
+            "expected": "First-time buyer with high LTV and marginal credit — manual review",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW|HIGH_RISK",
+            "expected": "FTHB_HIGH_RISK|FTHB",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "HIGH_RISK",
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": [
+              "FTHB",
+              "FTHB_HIGH_RISK"
+            ]
+          },
+          "requiredDocs": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_039.json",
+      "decision": {
+        "loanId": "LOAN-039",
+        "eligibility": {
+          "result": "refer",
+          "reason": "DU Refer requires manual underwriting review",
+          "flags": [
+            "MANUAL_REVIEW"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "REF-002",
+            "ruleName": "DU Refer - Manual Underwriting",
+            "priority": 58,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.0028329999999954225
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "DU Refer requires manual underwriting review",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_039.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "DU Refer requires manual underwriting review",
+            "expected": "DU Refer requires manual underwriting review",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_040.json",
+      "decision": {
+        "loanId": "LOAN-040",
+        "eligibility": {
+          "result": "refer",
+          "reason": "No AUS finding — manual underwriting required",
+          "flags": [
+            "MANUAL_REVIEW"
+          ]
+        },
+        "pricing": {
+          "miRateBps": null
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "REF-003",
+            "ruleName": "No AUS Finding - Manual Underwriting",
+            "priority": 57,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.0060829999999896245
+      },
+      "expected": {
+        "eligibilityResult": "refer",
+        "reason": "No AUS finding — manual underwriting required",
+        "miRateBps": "",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_040.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "refer",
+            "expected": "refer",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "No AUS finding — manual underwriting required",
+            "expected": "No AUS finding — manual underwriting required",
+            "match": true,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": null,
+            "expected": "",
+            "match": true,
+            "type": "empty"
+          },
+          "flags": {
+            "actual": "MANUAL_REVIEW",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "MANUAL_REVIEW"
+            ],
+            "expectedList": []
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_041.json",
+      "decision": {
+        "loanId": "LOAN-041",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 25
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          }
+        ],
+        "executionTime": 0.03912499999999852
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "25",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_041.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 25,
+            "expected": "25",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_042.json",
+      "decision": {
+        "loanId": "LOAN-042",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 19
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.588Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          }
+        ],
+        "executionTime": 0.004874999999998408
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "19",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_042.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 19,
+            "expected": "19",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 1
+    },
+    {
+      "file": "loan_app_043.json",
+      "decision": {
+        "loanId": "LOAN-043",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 25
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          }
+        ],
+        "executionTime": 0.0030830000000037217
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "25",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_043.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 25,
+            "expected": "25",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_044.json",
+      "decision": {
+        "loanId": "LOAN-044",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 25
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          }
+        ],
+        "executionTime": 0.0027919999999994616
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "25",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_044.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 25,
+            "expected": "25",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_045.json",
+      "decision": {
+        "loanId": "LOAN-045",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 38
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          }
+        ],
+        "executionTime": 0.0029159999999990305
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "38",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_045.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 38,
+            "expected": "38",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_046.json",
+      "decision": {
+        "loanId": "LOAN-046",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 38
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          }
+        ],
+        "executionTime": 0.0028750000000030695
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "38",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_046.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 38,
+            "expected": "38",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_047.json",
+      "decision": {
+        "loanId": "LOAN-047",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 58
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal",
+            "Mortgage Insurance Certificate"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-004",
+            "ruleName": "High LTV Documentation",
+            "priority": 47,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          }
+        ],
+        "executionTime": 0.003249999999994202
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "58",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_047.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 58,
+            "expected": "58",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Mortgage Insurance Certificate",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_048.json",
+      "decision": {
+        "loanId": "LOAN-048",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 58
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal",
+            "Mortgage Insurance Certificate"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-004",
+            "ruleName": "High LTV Documentation",
+            "priority": 47,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          }
+        ],
+        "executionTime": 0.003290999999990163
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "58",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_048.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 58,
+            "expected": "58",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Mortgage Insurance Certificate",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_049.json",
+      "decision": {
+        "loanId": "LOAN-049",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 87
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal",
+            "Mortgage Insurance Certificate"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-004",
+            "ruleName": "High LTV Documentation",
+            "priority": 47,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          }
+        ],
+        "executionTime": 0.003917000000001281
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "87",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_049.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 87,
+            "expected": "87",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Mortgage Insurance Certificate",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_050.json",
+      "decision": {
+        "loanId": "LOAN-050",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 87
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal",
+            "Mortgage Insurance Certificate"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-004",
+            "ruleName": "High LTV Documentation",
+            "priority": 47,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          }
+        ],
+        "executionTime": 0.02312499999999318
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "87",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_050.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 87,
+            "expected": "87",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Mortgage Insurance Certificate",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_051.json",
+      "decision": {
+        "loanId": "LOAN-051",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 87
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal",
+            "Mortgage Insurance Certificate"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-004",
+            "ruleName": "High LTV Documentation",
+            "priority": 47,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          }
+        ],
+        "executionTime": 0.0036669999999929814
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "87",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_051.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 87,
+            "expected": "87",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Mortgage Insurance Certificate",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_052.json",
+      "decision": {
+        "loanId": "LOAN-052",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 87
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal",
+            "Mortgage Insurance Certificate"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-004",
+            "ruleName": "High LTV Documentation",
+            "priority": 47,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          }
+        ],
+        "executionTime": 0.003250000000008413
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "87",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_052.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 87,
+            "expected": "87",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal|Mortgage Insurance Certificate",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Mortgage Insurance Certificate",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_053.json",
+      "decision": {
+        "loanId": "LOAN-053",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 38
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          }
+        ],
+        "executionTime": 0.00333299999999781
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "38",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_053.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 38,
+            "expected": "38",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_054.json",
+      "decision": {
+        "loanId": "LOAN-054",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 38
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          }
+        ],
+        "executionTime": 0.0027919999999994616
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "38",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_054.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 38,
+            "expected": "38",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_055.json",
+      "decision": {
+        "loanId": "LOAN-055",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 25
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          }
+        ],
+        "executionTime": 0.0027499999999918145
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "25",
+        "flags": "FTHB",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_055.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 25,
+            "expected": "25",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "FTHB",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [],
+            "expectedList": [
+              "FTHB"
+            ]
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_056.json",
+      "decision": {
+        "loanId": "LOAN-056",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 38
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          }
+        ],
+        "executionTime": 0.0027919999999994616
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "38",
+        "flags": "FTHB",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_056.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 38,
+            "expected": "38",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "FTHB",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [],
+            "expectedList": [
+              "FTHB"
+            ]
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_057.json",
+      "decision": {
+        "loanId": "LOAN-057",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 25
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          }
+        ],
+        "executionTime": 0.0027910000000019863
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "25",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_057.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 25,
+            "expected": "25",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_058.json",
+      "decision": {
+        "loanId": "LOAN-058",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 38
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          }
+        ],
+        "executionTime": 0.005833000000009747
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "38",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_058.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 38,
+            "expected": "38",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_059.json",
+      "decision": {
+        "loanId": "LOAN-059",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 30
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          }
+        ],
+        "executionTime": 0.003540999999998462
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "30",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_059.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 30,
+            "expected": "30",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    },
+    {
+      "file": "loan_app_060.json",
+      "decision": {
+        "loanId": "LOAN-060",
+        "eligibility": {
+          "result": "approve",
+          "reason": "All eligibility criteria met",
+          "flags": []
+        },
+        "pricing": {
+          "miRateBps": 30
+        },
+        "documentation": {
+          "requiredDocs": [
+            "Credit Report",
+            "Income Verification",
+            "Asset Verification",
+            "Property Appraisal"
+          ]
+        },
+        "rulesFired": [
+          {
+            "ruleId": "PRICE-BASE",
+            "ruleName": "Base MI Rate Calculation",
+            "priority": 100,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-001",
+            "ruleName": "Standard Documentation",
+            "priority": 50,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          },
+          {
+            "ruleId": "DOC-002",
+            "ruleName": "Property Appraisal",
+            "priority": 49,
+            "timestamp": "2026-03-16T20:45:32.589Z"
+          }
+        ],
+        "executionTime": 0.0027090000000100645
+      },
+      "expected": {
+        "eligibilityResult": "approve",
+        "reason": "AUS approved — meets standard eligibility criteria",
+        "miRateBps": "30",
+        "flags": "",
+        "requiredDocs": ""
+      },
+      "comparison": {
+        "file": "loan_app_060.json",
+        "match": false,
+        "fields": {
+          "eligibilityResult": {
+            "actual": "approve",
+            "expected": "approve",
+            "match": true,
+            "type": "string"
+          },
+          "reason": {
+            "actual": "All eligibility criteria met",
+            "expected": "AUS approved — meets standard eligibility criteria",
+            "match": false,
+            "type": "string"
+          },
+          "miRateBps": {
+            "actual": 30,
+            "expected": "30",
+            "match": true,
+            "type": "numeric"
+          },
+          "flags": {
+            "actual": "",
+            "expected": "",
+            "match": true,
+            "type": "both-empty"
+          },
+          "requiredDocs": {
+            "actual": "Credit Report|Income Verification|Asset Verification|Property Appraisal",
+            "expected": "",
+            "match": false,
+            "type": "mismatch",
+            "actualList": [
+              "Asset Verification",
+              "Credit Report",
+              "Income Verification",
+              "Property Appraisal"
+            ],
+            "expectedList": []
+          }
+        }
+      },
+      "executionTime": 0
+    }
+  ]
+}

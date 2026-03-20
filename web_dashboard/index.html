@@ -34,34 +34,42 @@
 
         <!-- Navigation Tabs -->
         <nav class="tab-navigation" role="tablist">
-            <button 
-                class="tab-button active" 
-                data-tab="rule-viewer" 
-                role="tab" 
+            <button
+                class="tab-button active"
+                data-tab="rule-viewer"
+                role="tab"
                 aria-selected="true"
                 aria-controls="rule-viewer-panel">
                 📋 Rule Comparison
             </button>
-            <button 
-                class="tab-button" 
-                data-tab="test-explorer" 
-                role="tab" 
+            <button
+                class="tab-button"
+                data-tab="test-explorer"
+                role="tab"
                 aria-selected="false"
                 aria-controls="test-explorer-panel">
                 🧪 Test Cases
             </button>
-            <button 
-                class="tab-button" 
-                data-tab="decision-engine" 
-                role="tab" 
+            <button
+                class="tab-button"
+                data-tab="decision-comparison"
+                role="tab"
+                aria-selected="false"
+                aria-controls="decision-comparison-panel">
+                🔍 Decision Comparison
+            </button>
+            <button
+                class="tab-button"
+                data-tab="decision-engine"
+                role="tab"
                 aria-selected="false"
                 aria-controls="decision-engine-panel">
                 ⚙️ Decision Engine
             </button>
-            <button 
-                class="tab-button" 
-                data-tab="parity-report" 
-                role="tab" 
+            <button
+                class="tab-button"
+                data-tab="parity-report"
+                role="tab"
                 aria-selected="false"
                 aria-controls="parity-report-panel">
                 📊 Parity Report
@@ -106,10 +114,28 @@
                 </div>
             </section>
 
+            <!-- Decision Comparison Panel -->
+            <section
+                id="decision-comparison-panel"
+                class="content-panel"
+                role="tabpanel"
+                aria-labelledby="decision-comparison-tab"
+                hidden>
+                <div class="panel-header">
+                    <h2>Decision Comparison & Parity Analysis</h2>
+                    <p class="panel-description">Comprehensive comparison of expected vs actual decision results</p>
+                </div>
+                <div id="decision-comparison-content" class="panel-content">
+                    <div class="placeholder-message">
+                        <p>Loading parity validation results...</p>
+                    </div>
+                </div>
+            </section>
+
             <!-- Decision Engine Panel -->
-            <section 
-                id="decision-engine-panel" 
-                class="content-panel" 
+            <section
+                id="decision-engine-panel"
+                class="content-panel"
                 role="tabpanel"
                 aria-labelledby="decision-engine-tab"
                 hidden>

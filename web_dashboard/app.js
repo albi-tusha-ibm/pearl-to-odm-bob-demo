@@ -8,6 +8,8 @@ import { DecisionSimulator } from './services/DecisionSimulator.js';
 import { RuleViewer } from './components/RuleViewer.js';
 import { TestCaseExplorer } from './components/TestCaseExplorer.js';
 import { ParityReport } from './components/ParityReport.js';
+import { DecisionComparison } from './components/DecisionComparison.js';
+import { DecisionEngine } from './components/DecisionEngine.js';
 
 /**
  * AppState - Observable state management using observer pattern
@@ -74,7 +76,9 @@ class App {
         this.components = {
             ruleViewer: null,
             testExplorer: null,
-            parityReport: null
+            parityReport: null,
+            decisionComparison: null,
+            decisionEngine: null
         };
     }
 
@@ -232,6 +236,9 @@ class App {
             case 'parity-report':
                 this.initParityReport();
                 break;
+            case 'decision-comparison':
+                this.initDecisionComparison();
+                break;
         }
     }
 
@@ -333,16 +340,66 @@ class App {
     /**
      * Initialize Decision Engine tab
      */
-    initDecisionEngine() {
+    async initDecisionEngine() {
         const content = document.getElementById('decision-engine-content');
+        const state = this.state.getState();
         
-        // Placeholder for now - will be replaced by DecisionEngine component
-        content.innerHTML = `
-            <div class="placeholder-message">
-                <p>Decision Engine Component - Coming Soon</p>
-                <p class="mt-md">Simulated ODM decision execution</p>
-            </div>
-        `;
+        // Load test cases and expected decisions if not already loaded
+        if (!state.testCases || !state.expectedDecisions) {
+            content.innerHTML = `
+                <div class="placeholder-message">
+                    <p>⏳ Loading test data for decision engine...</p>
+                </div>
+            `;
+            
+            try {
+                const testCases = await this.dataLoader.loadTestCases();
+                const expectedDecisions = await this.dataLoader.loadExpectedDecisions();
+                
+                this.state.setState({
+                    testCases,
+                    expectedDecisions
+                });
+                
+                console.log(`Loaded ${testCases.length} test cases for decision engine`);
+            } catch (error) {
+                console.error('Failed to load test data:', error);
+                content.innerHTML = `
+                    <div class="placeholder-message error">
+                        <p>❌ Failed to load test data: ${error.message}</p>
+                    </div>
+                `;
+                return;
+            }
+        }
+        
+        const currentState = this.state.getState();
+        
+        if (!currentState.testCases || currentState.testCases.length === 0) {
+            content.innerHTML = `
+                <div class="placeholder-message">
+                    <p>No test cases available for decision engine.</p>
+                </div>
+            `;
+            return;
+        }
+
+        // Initialize DecisionEngine component if not already created
+        if (!this.components.decisionEngine) {
+            this.components.decisionEngine = new DecisionEngine(content, {
+                decisionSimulator: this.decisionSimulator,
+                dataLoader: this.dataLoader
+                // Don't pass testCases/expectedDecisions as props - let init() load them
+            });
+            await this.components.decisionEngine.init();
+            this.components.decisionEngine.mount();
+        } else {
+            // Update existing component with latest data
+            this.components.decisionEngine.update({
+                decisionSimulator: this.decisionSimulator,
+                dataLoader: this.dataLoader
+            });
+        }
     }
 
     /**
@@ -406,6 +463,29 @@ class App {
                 decisionSimulator: this.decisionSimulator,
                 testCases: currentState.testCases,
                 expectedDecisions: currentState.expectedDecisions
+            });
+        }
+    }
+
+    /**
+     * Initialize Decision Comparison tab
+     */
+    async initDecisionComparison() {
+        const content = document.getElementById('decision-comparison-content');
+        
+        // Initialize DecisionComparison component if not already created
+        if (!this.components.decisionComparison) {
+            this.components.decisionComparison = new DecisionComparison(content, {
+                decisionSimulator: this.decisionSimulator
+            });
+            // Initialize the component (loads parity data)
+            await this.components.decisionComparison.init();
+            // Mount the component to render it
+            this.components.decisionComparison.mount();
+        } else {
+            // Update existing component
+            this.components.decisionComparison.update({
+                decisionSimulator: this.decisionSimulator
             });
         }
     }
